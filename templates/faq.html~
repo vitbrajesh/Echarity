@@ -28,7 +28,7 @@
   
 <style>
 .navbar-default{
-background: #33dcbb;
+background: white;
 
 }
 .modal-footer{
@@ -55,7 +55,7 @@ background:#00CC99;
 }
 </style>
 </head>
-<body style="background:Khaki">
+<body style="background:#33dcbb">
 <div class="navbar-default navbar-fixed-top" role="navigation">
 <div class="container">
 <div class="navbar-header">
