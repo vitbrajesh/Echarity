@@ -1,0 +1,4 @@
+#!/home/vit1/virtual/vir/bin/python
+# EASY-INSTALL-SCRIPT: 'sympy==0.7.6.1','isympy'
+__requires__ = 'sympy==0.7.6.1'
+__import__('pkg_resources').run_script('sympy==0.7.6.1', 'isympy')
