@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<ul class="nav navbar-nav">
+<!-- Trigger the modal with a button -->  
+ <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+  <li role="presentation"><a href="#"><b></b></a></li>
+  <li role="presentation"><a href="#"><b>Messages</b></a></li>
+ <li role="presentation" ><a href="#"><b></b></a></li>
+  <li role="presentation"><a href="#"><b>Profile</b></a></li>
+  <li role="presentation"><a href="#"><b></b></a></li>
+    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+      <li role="presentation"><a href="#"><b></b></a></li>
+    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+  <li role="presentation"><a href="#"><b></b></a></li>
+  <li role="presentation"><a href="#"><b>Messages</b></a></li>
+ <li role="presentation" ><a href="#"><b></b></a></li>
+  <li role="presentation"><a href="#"><b>Profile</b></a></li>
+  <li role="presentation"><a href="#"><b></b></a></li>
+    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+</ul>
+
+</head></html>

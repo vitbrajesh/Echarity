@@ -1,0 +1,46 @@
+{% extends 'item/base.html' %}
+
+{% block content %}
+<div class="donatable_item">
+        {% if donatable_item.date_created %}
+            <div class="date">
+                {{ donatable_item.date_created }}
+            </div>
+        {% endif %}
+
+         <h1>Product :	{{ donatable_item.title }}</h1>
+      <div class="row">
+    <div class='col-sm-7'>
+
+   {{ donatable_item.photo }}
+{% load static from  staticfiles %}
+  <img src={% static donatable_item.photo %}  class = 'img-responsive' />
+
+              
+        
+          
+<p class='lead'>Description:{{ donatable_item.description }}</p>
+        
+
+    </div>
+
+    <!-- Product Sidebar --> 
+    <div class='col-sm-5'>
+        <p>ADD ON: {{donatable_item.date_created }}</p><br>
+<p>Remains: {{donatable_item.quantity }}</p>
+        
+        <br/>
+        <a href="#">Add toCart</a>
+<p>Location ZipCode: {{donatable_item.zip_Code }}</p
+        <br/>
+        <hr/>
+        <h4>Related Project</h4><br>
+<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">Excahnge/Donate</button><br>
+    </div>
+       
+</div>
+</p>Last Update:{{donatable_item.date_Update}}</p><br>
+       </p>Expire On:{{donatable_item.expire_date}}</p> <br>  
+
+<p><a href="{% url 'p_list'  %}">Back to product list</a></p>
+{% endblock %}

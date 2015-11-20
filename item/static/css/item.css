@@ -1,0 +1,54 @@
+h1 {
+    color: red;
+    background : navy;
+    font-family: 'Lobster';
+}
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+    background : orange;
+}
+
+.date {
+    float: right;
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.donatable_item-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+. {
+    margin-bottom: 70px;
+}
+
+.donatable_item h1 a, .donatable_item h1 a:visited {
+    color: #000000;
+}
+

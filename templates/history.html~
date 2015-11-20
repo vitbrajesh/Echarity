@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+{% block content %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USER</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+    <style>
+.navbar-default{
+background:grey;
+}
+        .myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:15px 61px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:15px 61px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+	</head>
+	<body>
+        <div class="navbar-default" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+ <a href="logout.html" class="btn btn-default">HOME  </a> 
+</div>
+<div class="navbar-collapse collapse">
+<a class="nav navbar-nav navbar-right"></a>
+<ul class="nav navbar-nav navbar-right">
+<!-- Trigger the modal with a button -->  
+<a href="rchrity.html" class="btn btn-danger square-btn-adjust">Logout</a> 
+ <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+  <li role="presentation"><a href="#"><b>Profile</b></a></li>
+  <li role="presentation"><a href="#"><b>Messages</b></a></li>
+</ul>
+</div>
+</div>
+        </div>
+
+           <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+                        <img id="blah" src="assets/img/find_user.png" class="img-circle"  width="160px" height="100px" alt="your selected item"/>
+                    <img />
+    <input type='file' id="imgInp" class="img-circle" value="upload"/>
+				
+					</li>
+					
+                    <li>
+                        <a  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                    </li>
+                      <li>
+                        <a  href="uib.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+                    </li>
+                    <li>
+                         <a  href="message.html"><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
+                    </li>
+						   <li  >
+                        <a  href="chart.htnml"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+                    </li>	
+                      <li  >
+                        <a  href="table.htmkl"><i class="fa fa-table fa-3x"></i> Table Examples</a>
+                    </li>
+                    <li  >
+                        <a  href="history.html"><i class="fa fa-edit fa-3x"></i> History </a>
+                    </li>				
+					
+					                   
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+
+                                </ul>
+                               
+                            </li>
+                        </ul>
+                      </li>  
+                  <li  >
+                        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                      
+                    </li>	
+                </ul>
+               
+            </div>
+            
+        </nav>  
+        
+ <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2 style="color:blue;margin-left:300px;">HISTORY</h2>   
+                        <h5 style="color:Green;margin-left:230px;">Welcome USER  to see you backDetails. </h5>
+                       
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                
+             
+                <div class="row"> 
+                    
+                                          
+                    <div class="panel panel-default">
+                         <div class="col-md-12">
+                             <br>
+<a href="#" class="btn btn-primary btn-lg">Request Id-XXX</a>
+                             <label><u>Your are loking for overcart</u></label><a href="#" class="myButton">Pending</a><span class="glyphicon glyphicon-remove"></span>
+                        <br><br><br>
+                        <a href="#" class="btn btn-primary btn-lg">Request Id-XXX</a>
+                             <label><u>Your are loking for overcart</u></label>    <a href="#" class="myButton">Great</a><span class="glyphicon glyphicon-user"></span>
+                        <br><br><br>
+                    
+                    <a href="#" class="btn btn-primary btn-lg">Request Id-XXX</a>
+                        <label><u>Your are loking for overcart</u></label>   <a href="#" class="myButton">Success</a> <span class="glyphicon glyphicon-check"></span>
+                        <br><br>
+                       
+ <hr />
+                    
+            
+            </div>
+                
+                 <!-- /. ROW  -->
+                 
+            
+             <!-- /. PAGE INNER  -->
+            
+                </div></div></div>
+<script type="text/javascript">
+            $(document).ready(function(){
+            $('#imgInp').on('change', function() {
+            readPath(this);
+            });
+            });
+
+            function readPath(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+          $('#blah').attr('src', e.target.result);
+            }
+          reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+    
+   
+</body>
+</html>
+
+ {% endblock %}

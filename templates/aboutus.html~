@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/bootstrap.min.css'  %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper" style="width:1290px;height:1000px;padding:10px;border:10px groove 	DarkGreen;">
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <center><h2>About eCharity</h2></center>   
+                        <img src="image/logo3.png" style="width:100px; height:100px; padding-bottom:10px">
+                        <i style="float:right; padding-left:-20px"><h3>Anticipate charity by preventing poverty</h3></i>
+                     </div>
+                     <div class="col-md-12">
+                     <h2>Mission</h2>   
+                     </div>
+                    <div class="col-lg-12">
+                    eCharity foundation is an international not-for-profit (or non-profit) organization that was founded to support the victims of domestic violence (with a particular focus on victims of acid splash). Our mission is to reach out to this most vulnerable, often neglected and forgotten members of society and help them out by providing them different types of support. The first and foremost goal is to restore their health and well-being, as much as possible, by providing them with cutting-edge medical treatments. Raising awareness is yet another goal of eCharity. We believe, by educating, not punishing, we can reduce and eventually eliminate the occurrence of this crime and crimes like this. Our ultimate mission is to support the victims to get back on their feet, once again, gain their self-confidence and to live a full life!
+                                </div>   
+               
+                 <!-- /. ROW  -->
+                 <hr />
+                    
+                     <div class="col-md-12">
+                     <h2>Vission</h2>   
+                     </div>
+                    <div class="col-lg-12">
+                     Our vision is to create a world in which all human beings including women and children live a healthy life without being threatened by Domestic Violence. The victims of domestic violence should receive adequate support, morally and otherwise, to mitigate and minimize the impact of such inhumane actions on their lives.
+                    
+                    </div>
+              <div class="col-md-12">
+                     <h2>Core Principles</h2>   
+                     </div>
+                    <div class="col-lg-12">
+            <ul> 
+                        
+                <li> Commitment to creating a world, where victims of domestic violence are receiving the most effective support they need to get back to their regular life.</li><br/>
+                
+                <li>Particular focus on the needs of women & children, who are affected by the violent action of  acid splash , their medical and financial needs.</li><br/>
+                <li> Safety & Security of individuals are the very basic right that should not be taken away under any circumstances.</li><br/>
+                <li>Empowering victims of domestic violence to the largest possible extent. </li><br/>
+                <li>Creating opportunities to make the victims more self-sufficient, financially independent and to be able to create income and use their capacity and talent to live a life, as they deserve!</li><br/>
+                <li>Commitment to advancing social justice and equality through Training, Awareness & Education.</li>
+  </ul>
+                    
+                    </div>        
+                    
+                    </div>
+         
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{% static 'js/jquery.metisMenu.js' %}"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+ 
+</body>
+</html>

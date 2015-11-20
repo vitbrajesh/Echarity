@@ -1,0 +1,110 @@
+{% extends "base.html"%}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>logout</title>
+		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		
+		<link rel="stylesheet" type="text/css" href="css/menu_bubble.css" />
+		<script src="js/snap.svg-min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" type="text/css" />
+<link href="css/bootstrap-theme.css" type="text/css" />
+<link href="css/bootstrap-theme.min.css" type="text/css" />
+<!----------------ONLINE------->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+<style>
+.navbar-default{
+background: #00CC99;
+}
+.modal-footer{
+background:#00CC99;
+}
+        
+#myBODY {
+   background :url(image/slider-intro-image2.jpg) no-repeat center top;
+    background-size:100%;
+   min-height: 600px; 
+    weight:120px;
+    padding-top: 18px;
+    background-repeat: no-repeat;
+}
+    
+</style>
+	</head>
+	<body>
+        <div class="navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<h1><b>WELCOME</b></h1>
+</div>
+<div class="navbar-collapse collapse">
+<a class="nav navbar-nav navbar-right"></a>
+<ul class="nav navbar-nav navbar-right">
+<!-- Trigger the modal with a button -->  
+<button class="menu-button" id="open-button" align="left">Open Menu</button>
+ <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
+  <li role="presentation"><a href="#"><b>Profile</b></a></li>
+  <li role="presentation"><a href="#"><b>Messages</b></a></li>
+</ul>
+</div>
+</div>
+        </div>
+    
+        <!---------------------bubble-------------->
+		 <div id="myBODY">
+        <div class="row">
+        <div class="col-md-6 col-md-offset-3 center">
+            
+            <form role="form" action="#" method="post" enctype="plain">
+                <input type="text" name="search-query" style="height:40px; width: 400px; margin-left:0px; margin-top:180px;" class="form-control1" placeholder="Searche and Explore your vlues and things.."/> 
+                <input type="button" class="btn btnprimary"  style="height:40px; width: 100px;"  value="Quick Serch"/>
+                </form>
+            
+            </div>
+        
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="blank.html"><i class="fa fa-fw fa-star-o"></i><span>DASHBOARD</span></a>
+						<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
+						<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
+						<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+					</svg>
+                </div></div></div></div>
+			
+			</div>
+		
+                <!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/main4.js"></script>
+	</body>
+</html>
