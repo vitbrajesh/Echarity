@@ -4,14 +4,14 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>E-CHARITY</title>
 		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
 		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		
+
 		<link rel="stylesheet" type="text/css" href="{% static 'css/menu_bubble.css' %}"  />
 		<script src="{% static 'js/snap.svg-min.js' %}" ></script>
 		<!--[if IE]>
@@ -26,14 +26,14 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>    
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
 <script src="{% static 'js/facebook.js' %}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://connect.facebook.net/en_US/all.js"></script>
 
-  
+
 <style>
 .navbar-default{
 background:white;
@@ -41,15 +41,15 @@ background:white;
 .modal-footer{
 background:#00CC99;
 }
-        
+
 #myBODY {
    background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;
     background-size:100%;
-   min-height: 730px; 
+   min-height: 730px;
     weight:120px;
     padding-top: 2%;
     background-repeat: no-repeat;}
-    
+
     .mtb
     {
         padding-top: 18%;
@@ -58,7 +58,7 @@ background:#00CC99;
  .navbar-collapse
  {
         padding-top: 1%;
-        padding-left: auto;}  
+        padding-left: auto;}
 </style>
 </head>
 <body style="background:#33dcbb">
@@ -75,42 +75,40 @@ background:#00CC99;
 </div>
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
-<!-- Trigger the modal with a button --> 
+<!-- Trigger the modal with a button -->
+<li role="presentation" ><a href="{% url 'products' %}"><b>PRODUCT LIST</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% if request.user.is_authenticated %}
-<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
-<button class="menu-button" id="open-button" align="left">Open Menu</button>
+<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="menu-button" id="open-button" align="left">Open Menu</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 {% else %}
-<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>
+<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% endif %}
- <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT</b></a></li>
-  <li role="presentation"><a href="{% url 'faq' %}"><b>FAQ</b></a></li>
-  <li role="presentation"><a href="{% url 'contact' %}"><b>CONTACT</b></a></li>
 </ul>
 </div>
 </div>
-    </div>
+    </div></div>
 
  <div id="myBODY">
-<div class="menu-wrap"> 
-<nav class="menu">
-					<div class="icon-list">
-<a href="dash/"><i class="fa fa-fw fa-star-o"></i><span>DASHBOARD</span></a>
+<div class="menu-wrap">
+<nav class="menu"style="background-color:PapayaWhip">
+<div class="icon-list"style="background-color:PapayaWhip">
+                <a href="dashboard/"><i class="fa fa-fw fa-star-o"></i><span>DASHBOARD</span></a>
 		<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
 		<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
 		<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
 		<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
-						<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+		<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
 					</div>
 				</nav>
 				<button class="close-button" id="close-button">Close Menu</button>
 				<div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
 					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
 						<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
-					</svg>				
+					</svg>
                 </div>
-</div>      
+</div>
   <div class="mtb">
-                 <h1>E-CHARITY FOR HUMANITY</h1>
+                 <h1>E-CHARITY</h1>
 <div class="flexsearch">
 		<div class="flexsearch--wrapper">
 		<form class="flexsearch--form"  method="GET" role="search" action='{% url "products" %}'>
@@ -123,13 +121,10 @@ background:#00CC99;
 </div>
 </div>
 	</div>
-	
+
  <div class="container">
-  <!-- Modal -->
   <div class="modal fade" id="login" role="dialog">
     <div class="modal-dialog">
-    
-       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -146,131 +141,110 @@ background:#00CC99;
           {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
             <form class='navbar-form navbar-right' method='POST' action='{% url "auth_login" %}'>{% csrf_token %}
               <div class='form-group'>
-                 <input type='text' class='form-control' name='username' placeholder='Username'  /> 
+                 <input type='text' class='form-control' name='username' placeholder='Username'  />
               </div>
               <div class='form-group'>
                 <input type='password' class='form-control' name='password' placeholder='Password' />
 <input id="remember" type="checkbox" />
-<label for="remember">Remember me on this computer</label>              
+<label for="remember">Remember me on this computer</label>
               <button type='submit' class='btn btn-default'>Login</button></div>
           </form>
-          {% endif %}     
+          {% endif %}
        <a href="{% url 'registration_register' %}" class="btn btn-info btn-l square-btn-adjust">RAGISTRATION FOR THE NEW USER </a>
 					</div>
 </div>
-					
-                    
+
+
 		</form>
                 </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+</div>
     </div>
-  </div>
-    </div>
+  
     <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
-    <lable><h2>Latest Donater</h2></lable>
+    <lable><h2><u>Latest Donater</u></h2></lable>
     <div class = "row">
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src ="image/b2.jpeg" alt = "Generic placeholder thumbnail">
-      </a>
+      <a href = "/products/2/" class = "thumbnail">
+         <img src ="{% static 'img/snap/1pur.jpg'%}" alt = "Generic placeholder thumbnail">
+      </a> 
        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>
 
    </div>
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src = "image/b2.jpeg" alt = "Generic placeholder thumbnail">
+      <a href = "/products/8/" class = "thumbnail">
+         <img src = "{% static 'img/snap/bags.jpg'%}" alt = "Generic placeholder thumbnail">
       </a>
-          <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>
    </div>
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src ="image/b2.jpeg" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
-   
-   <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src = "image/b2.jpeg" alt = "Generic placeholder thumbnail">
+      <a href = "/products/11/" class = "thumbnail">
+         <img src ="{% static 'img/snap/1.jpg'%}" alt = "Generic placeholder thumbnail">
       </a>
         <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>
    </div>
-   
+
+   <div class = "col-sm-6 col-md-3">
+      <a href = "/products/12/" class = "thumbnail">
+         <img src ="{% static 'img/snap/5.jpg'%}" alt = "Generic placeholder thumbnail">
+      </a>
+        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <label><input type="radio" name="optradio">Favourite</label>
+   </div>
+
 </div>
-    
-    <lable><h2>Latest Requester</h2></lable>
+<hr/>
+    <lable><h2><u>Latest Requester</u></h2></lable>
      <div class = "row">
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src ="image/b2.jpeg" alt = "Generic placeholder thumbnail">
+      <a href = "/products/10/" class = "thumbnail">
+         <img src ="{% static 'img/snap/2.jpg'%}" alt = "Generic placeholder thumbnail">
       </a>
         <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>
    </div>
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src = "image/b2.jpeg" alt = "Generic placeholder thumbnail">
+      <a href = "/products/14/" class = "thumbnail">
+         <img src = "{% static 'img/snap/bad.jpg'%}" alt = "Generic placeholder thumbnail">
       </a>
         <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       
+
        <label><input type="radio" name="optradio">Favourite</label>
    </div>
-   
+
    <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src ="image/b2.jpeg" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
-   
-   <div class = "col-sm-6 col-md-3">
-      <a href = "#" class = "thumbnail">
-         <img src = "image/b2.jpeg" alt = "Generic placeholder thumbnail">
+      <a href = "/products/16/" class = "thumbnail">
+         <img src ="{% static 'img/snap/sofa.jpg'%}" alt = "Generic placeholder thumbnail">
       </a>
         <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>
    </div>
-   
+
+   <div class = "col-sm-6 col-md-3">
+      <a href = "/products/1/" class = "thumbnail">
+         <img src = "{% static 'img/snap/gitr.jpg'%}" alt = "Generic placeholder thumbnail">
+      </a>
+        <a href = "/products/1/" > <button type = "button" class = "btn btn-info">Details</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <label><input type="radio" href = "/products/1/" name="optradio">Favourite</label>
+   </div></div></div><br><br><br><br>
+<div class="footer">
+{% include "products/footer.html" %}
 </div>
-<div class="page-footer">
-<ul class="nav navbar-nav">
-<!-- Trigger the modal with a button -->  
- <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
-  <li role="presentation"><a href="#"><b></b></a></li>
-  <li role="presentation"><a href="#"><b>Messages</b></a></li>
- <li role="presentation" ><a href="#"><b></b></a></li>
-  <li role="presentation"><a href="#"><b>Profile</b></a></li>
-  <li role="presentation"><a href="#"><b></b></a></li>
-    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
-      <li role="presentation"><a href="#"><b></b></a></li>
-    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
-  <li role="presentation"><a href="#"><b></b></a></li>
-  <li role="presentation"><a href="#"><b>Messages</b></a></li>
- <li role="presentation" ><a href="#"><b></b></a></li>
-  <li role="presentation"><a href="#"><b>Profile</b></a></li>
-  <li role="presentation"><a href="#"><b></b></a></li>
-    <li role="presentation" ><a href="#"><b>ABOUT</b></a></li>
-</ul>
-   </div> 
-       
     <!----------------------------FACEBOOK---------------------->
 
-    
-    
+
+
  <!--<script>
         $(document).ready(function(){
        $('#1').width(200);
@@ -279,18 +253,18 @@ background:#00CC99;
           $(this).css("cursor","pointer");
           $(this).animate({width: "500px"}, 'fast');
        });
-    
+
     $('#imgSmile').mouseout(function()
-      {   
+      {
           $(this).animate({width: "200px"}, 'fast');
        });
    });
     </script>-->
-    
-    
-    
-    
-    
+
+
+
+
+
 <!--<script>
 
     $('#zoom_02').elevateZoom({
@@ -298,15 +272,16 @@ background:#00CC99;
 cursor: "crosshair",
 zoomWindowFadeIn: 600,
 zoomWindowFadeOut: 850,
-   }); 
+   });
      $('#zoom_03').elevateZoom({
     zoomType: "inner",
 cursor: "crosshair",
 zoomWindowFadeIn: 600,
 zoomWindowFadeOut: 850,
-   }); 
+   });
 </script>-->
 <script src="{% static 'js/classie.js' %}" ></script>
-<script src="{% static 'js/main4.js' %}" ></script>  
+<script src="{% static 'js/main4.js' %}" ></script>
 </body>
     </html>
+

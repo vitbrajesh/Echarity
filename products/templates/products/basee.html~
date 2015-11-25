@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load url from future %}
+{% block content %}  
+{% endblock %}
+<table class='table'>	
+{% for object in  object_list %}
+<tr>
+
+
+        <td>
+              {% if object.productimage_set.count > 0 %}
+        <div>
+              {% for img in object.productimage_set.all %}
+              <img class = 'img-responsive'src="{{ img.image.url }}" />
+              {% endfor %}
+            
+        </div>        
+          {% endif %}
+             
+        </td>        
+          
+{% endfor %}
+</table>
+

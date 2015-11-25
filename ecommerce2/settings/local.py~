@@ -61,6 +61,9 @@ INSTALLED_APPS = (
     'newsletter',
     'products',
     'item',
+    'driver',
+    'django_messages',
+    'filer',
 )
 
 MIDDLEWARE_CLASSES = (

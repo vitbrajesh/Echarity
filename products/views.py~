@@ -2,6 +2,7 @@ from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.template import Context
+from products.models import ProductManager, ProductImage
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.utils import timezone

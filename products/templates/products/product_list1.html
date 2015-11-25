@@ -1,0 +1,25 @@
+
+
+
+
+<table class='table'>	
+{% for object in  object_list %}
+<tr>
+
+
+        <td>
+            
+        <div>
+              {% for img in object.productimage_set.all %}
+              <a href="/products/{{ object.pk }}/"> <img class = 'img-responsive'src=" {{ img.image.url }}" href="/products/{{ object.pk }}/" /></a>
+              {% endfor %}
+            
+        </div>        
+          
+             
+        </td>        
+          
+{% endfor %}
+</table>
+
+
