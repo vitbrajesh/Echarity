@@ -170,7 +170,7 @@ background:#00CC99;
 
    <div class = "col-sm-6 col-md-3">
       <a href = "/products/2/" class = "thumbnail">
-         <img src ="{% static 'img/snap/1pur.jpg'%}" alt = "Generic placeholder thumbnail">
+         <img src ="{% static 'img/snap/1pur.jpg'%}" alt = "Generic placeholder ">
       </a> 
        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <label><input type="radio" name="optradio">Favourite</label>

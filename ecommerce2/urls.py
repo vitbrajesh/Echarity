@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^gallery/$', 'ecommerce2.views.gallery', name='gallery'),
     url(r'^dashboard/$', 'ecommerce2.views.dashboard', name='dashboard'),
     url(r'^history/$', 'ecommerce2.views.blank', name='history'),
+
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^logout/$', 'driver.views.LogoutRequest'), 
     # Django JET URLS
     url(r'^jet/', include('jet.urls', 'jet')), 
+    #url(r'^items/', include('items.urls')),
     url(r'^item/', include('item.urls')),
 ]
 

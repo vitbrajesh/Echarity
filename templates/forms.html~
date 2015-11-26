@@ -4,10 +4,9 @@
 
 {% block content %}
 
-
-
-
-
+{% load staticfiles %}
+<header>
+</header>
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
 

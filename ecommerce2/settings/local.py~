@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'newsletter',
     'products',
     'item',
+    #'items',
     'driver',
     'django_messages',
     'filer',
