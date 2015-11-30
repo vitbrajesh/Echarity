@@ -1,6 +1,7 @@
 {% extends "base.html"%}
-
+<br>
 {% block content %}
+<div class="container">
 <div class="row">
 
 
@@ -9,9 +10,9 @@
          {% if object.productimage_set.count > 0 %}
         <div>
               {% for img in object.productimage_set.all %}
-              <img class = 'img-responsive'src="{{ img.image.url }}" />
+              <img class = 'img-responsive' src="{{ img.image.url }}" />
               {% endfor %}
-              <p class='lead'>{{ object.description }}</p>
+             <U> <p class='lead'>{{ object.description }}</p></u>
         </div>        
           {% endif %}
         
@@ -39,9 +40,11 @@
 </p>Last Update:{{object.date_Update}}</p><br>
        </p>Expire On:{{object.expire_date}}</p> <br> 
 
-        <br/>
+        <br/> <h4>Related Project</h4>
         <hr/>
-        <h4>Related Project</h4>
+ <u><a href="{% url 'products' %}"><b><--BACK TO PRODUCT LIST<b></a></u>
     </div>
 </div>
+</div>
+<br>
 {% endblock %}

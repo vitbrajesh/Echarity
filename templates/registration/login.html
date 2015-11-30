@@ -4,6 +4,11 @@
 
 
 {% block content %}
+{% load static %}
+<div class="container">
+<div class="jumbotron"><img src='{% static "img/snap/1login.png" %}'
+	</div>
+		</div>
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
 <h1>Login</h1>
@@ -24,5 +29,5 @@
 <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
 </div>
 </div>
-
+</div>
 {% endblock %}

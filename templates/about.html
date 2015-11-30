@@ -14,14 +14,21 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 {% block content %}
+<div id="wrapper" style="width:1290px;height:1300px;padding:0px;border:10px groove;">
+<div class="container">
 
-<body>
-    <div id="wrapper" style="width:1290px;height:1000px;padding:10px;border:10px groove;">
+			<!-- Main component for a primary marketing message or call to action -->
+			<div class="jumbotron"><img src='{% static "img/snap/0about.jpg" %}'
+			</div>
+			</div>
+  
+
+    
 
                 <div class="row">
                     <div class="col-md-12">
                         <center><h2>About eCharity</h2></center>
-                        <img src="image/logo3.png" style="width:100px; height:100px; padding-bottom:10px">
+                        <img src="{% static 'img/logo3.png' %}" style="width:100px; height:100px; padding-bottom:10px">
                         <i style="float:right; padding-left:-20px"><h3>Anticipate charity by preventing poverty</h3></i>
                      </div>
                      <div class="col-md-12">
@@ -76,8 +83,9 @@
     <script src="{% static 'js/jquery.metisMenu.js' %}"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="{% static 'js/custom.js' %}"></script>
-{% endblock %}
+
 </body>
 </html>
+{% endblock %}
 
 

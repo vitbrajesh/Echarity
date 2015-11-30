@@ -7,7 +7,7 @@ from django.contrib import admin
 urlpatterns = [
     # Examples:
     url(r'^messages/', include('django_messages.urls')),
-    url(r'^$', 'newsletter.views.home', name='home'),
+    #url(r'^$', 'newsletter.views.home', name='home'),
     url(r'^contact/$', 'newsletter.views.contact', name='contact'),
     url(r'^about/$', 'ecommerce2.views.about', name='about'),
     url(r'^blank/$', 'ecommerce2.views.blank', name='blank'),
@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^history/$', 'ecommerce2.views.blank', name='history'),
 
     # url(r'^blog/', include('blog.urls')),
-
+    url(r'^$', 'products.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^products/', include('products.urls')),

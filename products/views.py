@@ -1,4 +1,5 @@
 from django.db.models import Q
+from django.db import models
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.template import Context
@@ -9,9 +10,23 @@ from django.utils import timezone
 # Custom Imports
 from .forms import VariationInventoryForm
 from .models import Product, Variation
+from .models import Slider
+from .models import Product
+
 # Create your views here.
 #################################################################################
 #Product list view
+
+def home(request):
+	sliders = Slider.objects.all()
+	products = Product.objects.all()
+	template = 'home.html'	
+	context = {
+		"products": products,
+		"sliders": sliders,
+		}
+	return render(request, template, context)
+
 
 class ProductListView(ListView):
     model = Product

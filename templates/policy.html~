@@ -2,12 +2,16 @@
 {% load staticfiles %}
 {% block content %}
 <body>
-    <div id="wrapper" style="width:1288px;height:730px;padding:10px;border:10px groove DarkGreen; background-color:#33dcbb">
+    <div id="wrapper" style="width:1288px;height:1200px;padding:10px;border:10px groove DarkGreen; background-color:#33dcbb">
+<div class="container">
+<div class="jumbotron"><img src='{% static "img/snap/0Privacy.png" %}'
+	</div>
+		</div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <center><h2>Private Policy</h2></center>
-                        <i style="text-align: center"><h3>"We value your privacy"</h3></i><br/>
+                        <center><h1><b>PRIVACY POLICY<b></h1></center>
+                        <i style="text-align: center"><h2>"We value your privacy"</h2></i><br/>
                      </div>
                <hr />
                     <div class="col-lg-12" style="padding-top:20px">

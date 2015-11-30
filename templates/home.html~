@@ -78,8 +78,8 @@ background:#00CC99;
 <!-- Trigger the modal with a button -->
 <li role="presentation" ><a href="{% url 'products' %}"><b>PRODUCT LIST</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% if request.user.is_authenticated %}
-<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button class="menu-button" id="open-button" align="left">Open Menu</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MYA/C
+<a href="dashboard/"><button class="menu-button" align="left" values>Open Menu</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 {% else %}
 <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% endif %}
@@ -163,81 +163,54 @@ background:#00CC99;
       </div>
 </div>
     </div>
-  
-    <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
-    <lable><h2><u>Latest Donater</u></h2></lable>
-    <div class = "row">
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/2/" class = "thumbnail">
-         <img src ="{% static 'img/snap/1pur.jpg'%}" alt = "Generic placeholder ">
-      </a> 
-       <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
+ <!----------------------------------------------------------IMG CONTAINEr from backend ------------------------------>
 
-   </div>
+{% load staticfiles %}
+{% block content %}
+<p><h1><b>LATEST REQUESTED ITEMS ITEMS</b></h1></p><br>
+<div class='row'>
+{% for product in products %}
+		<div class='col-sm-3'>
+			<div class="thumbnail">
+<a href='{{ product.get_absolute_url }}'> <h1>{{ product.title }}</h1></a>
+	{% if product.productimage_set.count > 0 %}
+            {% if product.title %}
+	{% for img in product.productimage_set.all %}
+	<a href='{{ product.get_absolute_url }}'><img class = 'img-responsive'src="{{ img.image.url }}" /></a>
+				
+							<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
+{% endfor %}
+{% endif %}					
+{% endif %}
+<div class="caption">
+<p><u>{{ product.description|truncatewords:15}}</u></p>
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/8/" class = "thumbnail">
-         <img src = "{% static 'img/snap/bags.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-          <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
+<a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'products' %}" class="btn btn-success" role="button">MORE ITEMS</a></div>
+		   	 </div>
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/11/" class = "thumbnail">
-         <img src ="{% static 'img/snap/1.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/12/" class = "thumbnail">
-         <img src ="{% static 'img/snap/5.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
+		</div>
+
+{% cycle "" "" "" "</div><br/><hr/><div class='row'><p><h1><b>LATEST DONATED ITEMS</b></h1></p></br>" %}
+{% endfor %}
 
 </div>
-<hr/>
-    <lable><h2><u>Latest Requester</u></h2></lable>
-     <div class = "row">
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/10/" class = "thumbnail">
-         <img src ="{% static 'img/snap/2.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
+{% endblock %}
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/14/" class = "thumbnail">
-         <img src = "{% static 'img/snap/bad.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hr>
+<!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
 
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/16/" class = "thumbnail">
-         <img src ="{% static 'img/snap/sofa.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <button type = "button" class = "btn btn-info">Details</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" name="optradio">Favourite</label>
-   </div>
+<div class="container">
+<div class="jumbotron"><img src='{% static "img/snap/0charity.png" %}'
+	</div>
+		</div>
 
-   <div class = "col-sm-6 col-md-3">
-      <a href = "/products/1/" class = "thumbnail">
-         <img src = "{% static 'img/snap/gitr.jpg'%}" alt = "Generic placeholder thumbnail">
-      </a>
-        <a href = "/products/1/" > <button type = "button" class = "btn btn-info">Details</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <label><input type="radio" href = "/products/1/" name="optradio">Favourite</label>
-   </div></div></div><br><br><br><br>
+
+   </div></div><br><br><br><br>
 <div class="footer">
 {% include "products/footer.html" %}
 </div>

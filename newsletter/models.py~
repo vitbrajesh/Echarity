@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import ProductManager, ProductImage
+
 
 # Create your models here.
 class SignUp(models.Model):

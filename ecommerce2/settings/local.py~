@@ -20,18 +20,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'csqwlmc8s55o($rt6ozh7u+ui9zb-et00w$d90j8$^!nvj41_r'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'yourgmail@gmail.com'
-EMAIL_HOST_PASSWORD = 'yourpassword'
-EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vinaykumar.vk2007@gmail.com'
+EMAIL_HOST_PASSWORD = '8090289260'
+EMAIL_PORT = 587
 
 ''' 
 If using gmail, you will need to
@@ -39,7 +39,6 @@ unlock Captcha to enable Django
 to  send for you:
 https://accounts.google.com/displayunlockcaptcha
 '''
-
 
 
 # Application definition
