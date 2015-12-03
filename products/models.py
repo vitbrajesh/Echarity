@@ -3,8 +3,6 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.utils.text import slugify
 from django.utils import timezone
-
-
 # Create your models here.
 
 class ProductManager (models.Manager):

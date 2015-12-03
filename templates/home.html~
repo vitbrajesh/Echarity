@@ -45,14 +45,19 @@ background:#00CC99;
 #myBODY {
    background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;
     background-size:100%;
-   min-height: 730px;
+   min-height: 620px;
     weight:120px;
     padding-top: 2%;
     background-repeat: no-repeat;}
 
+#myBODY1 {
+   background:LightSteelBlue;
+    background-size:100%;
+    weight:120px;}
+
     .mtb
     {
-        padding-top: 18%;
+        padding-top: 23%;
         padding-left:16%;}
 
  .navbar-collapse
@@ -61,7 +66,7 @@ background:#00CC99;
         padding-left: auto;}
 </style>
 </head>
-<body style="background:#33dcbb">
+<body style="background:LightYellow">
 <div class="navbar-default navbar-fixed-top" role="navigation">
 <div class="container">
 <div class="navbar-header">
@@ -76,40 +81,23 @@ background:#00CC99;
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
 <!-- Trigger the modal with a button -->
-<li role="presentation" ><a href="{% url 'products' %}"><b>PRODUCT LIST</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<li role="presentation" ><a href="{% url 'products' %}"><b>PRODUCT LIST</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% if request.user.is_authenticated %}
-<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MYA/C
-<a href="dashboard/"><button class="menu-button" align="left" values>Open Menu</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="dashboard/"><button class="menu-button" align="left" values>Open Menu</button><span class="glyphicon glyphicon-user">USER</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> 
 {% else %}
-<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% endif %}
 </ul>
 </div>
 </div>
-    </div></div>
+    </div>
 
  <div id="myBODY">
-<div class="menu-wrap">
-<nav class="menu"style="background-color:PapayaWhip">
-<div class="icon-list"style="background-color:PapayaWhip">
-                <a href="dashboard/"><i class="fa fa-fw fa-star-o"></i><span>DASHBOARD</span></a>
-		<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
-		<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
-		<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
-		<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
-		<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
-					</div>
-				</nav>
-				<button class="close-button" id="close-button">Close Menu</button>
-				<div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
-					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
-						<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
-					</svg>
-                </div>
-</div>
+
   <div class="mtb">
-                 <h1>E-CHARITY</h1>
-<div class="flexsearch">
+               <div class="flexsearch">
 		<div class="flexsearch--wrapper">
 		<form class="flexsearch--form"  method="GET" role="search" action='{% url "products" %}'>
 		<div class="flexsearch--input-wrapper">
@@ -122,54 +110,31 @@ background:#00CC99;
 </div>
 	</div>
 
- <div class="container">
+
   <div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
+    <div class="modal-dialog">      
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">SIGN UP</h4>
-        </div>
+          <h4 class="modal-title">LOGIN HERE</h4>     
         <div class="modal-body">
-        <form>
-        <div class="row">
-  <div class="col-md-6">
-<a href="#"><img src='{% static "img/fb.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a><br/>
-<a href="http://www.twitter.com"><img src='{% static "img/tw.png" %}'/></a><br/>
-<a href="http://www.gmail.com"><img src='{% static "img/gplus.png" %}' /></a></div>
-  <div class="col-md-6">
-          {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
-            <form class='navbar-form navbar-right' method='POST' action='{% url "auth_login" %}'>{% csrf_token %}
-              <div class='form-group'>
-                 <input type='text' class='form-control' name='username' placeholder='Username'  />
-              </div>
-              <div class='form-group'>
-                <input type='password' class='form-control' name='password' placeholder='Password' />
-<input id="remember" type="checkbox" />
-<label for="remember">Remember me on this computer</label>
-              <button type='submit' class='btn btn-default'>Login</button></div>
-          </form>
-          {% endif %}
-       <a href="{% url 'registration_register' %}" class="btn btn-info btn-l square-btn-adjust">RAGISTRATION FOR THE NEW USER </a>
-					</div>
-</div>
-
-
-		</form>
-                </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/1sig00.png" %}' /> </a>        
+ <a href="{% url 'registration_register' %}"> <img src='{% static "img/snap/1user0000.png" %}' /> </a>
+                </div>       
       </div>
-</div>
     </div>
 
  <!----------------------------------------------------------IMG CONTAINEr from backend ------------------------------>
 
 {% load staticfiles %}
 {% block content %}
-<p><h1><b>LATEST REQUESTED ITEMS ITEMS</b></h1></p><br>
-<div class='row'>
+ <div id="myBODY1">
+<div class="column large-10 large-centered text-center">
+            <p style="font: oswald; padding-top:7px">
+                <h3 class="show-for-medium-up" style="color:LightYellow">"It's time to re-think charity...<br><br> It's time to give charity the big-league freedoms we really give to business...<br><br>The fight for these freedoms must be our new cause, because without them, all of our causes are ultimately lost."</h3></p>
+</div>
+<br><hr>
+<div class="container"  style="background-color:LightSteelBlue ">
+    <p><h3><b><u>Latest Requested items</u></b></h3></p><br>
+<div class="row">
 {% for product in products %}
 		<div class='col-sm-3'>
 			<div class="thumbnail">
@@ -178,10 +143,10 @@ background:#00CC99;
             {% if product.title %}
 	{% for img in product.productimage_set.all %}
 	<a href='{{ product.get_absolute_url }}'><img class = 'img-responsive'src="{{ img.image.url }}" /></a>
-				
+
 							<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
 {% endfor %}
-{% endif %}					
+{% endif %}
 {% endif %}
 <div class="caption">
 <p><u>{{ product.description|truncatewords:15}}</u></p>
@@ -193,14 +158,76 @@ background:#00CC99;
 
 		</div>
 
-{% cycle "" "" "" "</div><br/><hr/><div class='row'><p><h1><b>LATEST DONATED ITEMS</b></h1></p></br>" %}
+{% cycle "" "" "" "</div><br/><hr/><div class='row'><p><h3><b><u>Latest Donated Items</u></b></h3></p></br>" %}
 {% endfor %}
 
-</div>
+</div></div></div>
 
-{% endblock %}
+<div class="container">
+		<div class="row">
+			<div class='col-sm-3'></div>
+<div class='col-sm-9'>
+				<h1><b>Why you should choose E-Charity<b></h1></div>
+				<br>
+				<h3 class="show-for-medium-up">E-Charity is about giving back, raising trust more than of money for great causes and having the most fun in the world while doing it. And, here's as</h3>
+				<br>
+				<br>
+				
+			</div>
+	
+		<div class="row">
+			<div class='col-sm-1'></div>
+<div class='col-sm-5'>
+				<b>Best Pricing Guarantee<b>
+					<dd>3% guaranteed pricing and fastest access to your funds. Nearly every other site charges 8%. 
+
+					<b>Raise 3x More<b>
+					<dd>Raise 3x more money and crush your fundraising goal with our proven, easy fundraising ideas.</dd>
+
+					<b>Most Trusted</b>
+					<dd>The Red Cross, UNICEF, Boston Marathon, Ironman and millions of individuals use CrowdRise.</dd>
+				</dl>
+			</div>
+			<div class='col-sm-5'>
+				<dl>
+					<b>No Goal Requirements<b>
+					<dd>Keep the money you raise whether you beat your goal or not. No deadlines.</dd>
+
+					<b>Earn CrowdRise Impact Points<b>
+					<dd>Earn points when you raise money or give to a cause. It's the only rewards program in the giving world.</dd>
+
+
+					<b>Your Charitable Life<b>
+					<dd>Show the world your charitable impact. Get your own homepage for all your fundraisers and donations.</dd>
+				</dl>
+			</div>
+		</div>
+		<br><br>		
+		</div>
+<div style="height:200px; background-color:LightSkyBlue">
+
+
+    <div class="col-md-6" style="height:200px; padding-top:10px">
+      <img src="{% static 'img/snap/index.jpeg' %}"class="img-circle" height="100px" width="100px">
+      <p style="float: right; padding-bottom:100px; color:LightYellow">"We think sometimes that poverty is only being hungry, uneducated and homeless. The poverty of being unwanted, unloved and uncared for is the greatest poverty. We must start in our own homes to remedy this kind of poverty."</p>
+    </div>
+    <div class="col-md-6" style=" height:200px; padding-top:10px">
+      <img src="{% static 'img/snap/index2.jpeg' %}"class="img-circle" height="100px" width="100px">
+     <p style="float:right; color:LightYellow">“When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace.”</p>
+    </div>
+</div></div></div>
+
 
 <hr>
+<div class="column large-10 large-centered text-center">
+            <p style="font: oswald; padding-top:7px">
+                <h2 class="show-for-medium-up">"Fundraising Ideas...<br><br> The easiest, most innovative, awesome ways to raise money for a personal cause or charity"</h2></p>
+
+</div></div>
+	
+	
+		<br><br><br><br>
+	
 <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
 
 
@@ -210,11 +237,15 @@ background:#00CC99;
 		</div>
 
 
-   </div></div><br><br><br><br>
+  
+<div class='col-sm-9'></div>FOllw Us<br>
+<div class='col-sm-9'></div><a href="http://www.twitter.com"><img src='{% static "img/tw1.png" %}'/></a><a href="http://www.twitter.com"><img src='{% static "img/fb0.png" %}'/></a><a href="http://www.twitter.com"><img src='{% static "img/gplus0.png" %}'/></a>
+</div> </div></div><br><br>
 <div class="footer">
 {% include "products/footer.html" %}
 </div>
     <!----------------------------FACEBOOK---------------------->
+{% endblock %}
 
 
 

@@ -8,10 +8,14 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.utils import timezone
 # Custom Imports
-from .forms import VariationInventoryForm
+from .forms import PostForm, PostImg
+#from .forms import VariationInventoryForm
 from .models import Product, Variation
 from .models import Slider
 from .models import Product
+from django.shortcuts import redirect
+
+
 
 # Create your views here.
 #################################################################################
@@ -19,7 +23,7 @@ from .models import Product
 
 def home(request):
 	sliders = Slider.objects.all()
-	products = Product.objects.all()
+	products = Product.objects.filter(title__contains='E').order_by('-title')
 	template = 'home.html'	
 	context = {
 		"products": products,
@@ -113,4 +117,72 @@ class ProductDetailView(DetailView):
         return render(request, template, context)
 
 ########################################################################################
+
+def post_detail(request, pk):   
+    post = get_object_or_404(Product, pk=pk)
+    return render(request, 'products/product_detail1.html', {'post': post})
+
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            #return redirect('products.views.ProductDetailView', pk=post.pk)
+            #return render(request, 'products/product_list.html')   
+            return redirect('products.views.add_img', pk=post.pk) 
+    else:
+        form = PostForm()
+    return render(request, 'products/post_edit.html', {'form': form})
+
+#####################################################################################
+
+
+def add_img(request, pk):
+    if request.method == "POST":
+        form = PostImgForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            #return redirect('products.views.ProductDetailView', pk=post.pk)
+            #return render(request, 'products/product_list.html')   
+            return redirect('products.views.post_detail', pk=post.pk) 
+    else:
+        form = PostForm()
+    return render(request, 'products/post_edit.html', {'form': form})   
+    
+#####################################################################################
+
+
+def post_edit(request, pk):
+    post = get_object_or_404(Product, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('products.views.post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'products/post_img.html', {'form': form})
+
+
+##########################################################################################
+
+##########################################################################################
+def post_list(request):
+    model = Product, User
+    posts = Product.objects.filter(user_id = request.user.id)
+    return render(request, 'products/post_list3.html', {'posts': posts})
+
+
+
+
 

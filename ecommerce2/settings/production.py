@@ -48,7 +48,7 @@ if not settings.DEBUG:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vinaykumar.vk2007@gmail.com'
-EMAIL_HOST_PASSWORD = '8090289260'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 	''' 
@@ -57,7 +57,6 @@ EMAIL_PORT = 587
 	to  send for you:
 	https://accounts.google.com/displayunlockcaptcha
 	'''
-
 
 
 	# Application definition

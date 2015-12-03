@@ -81,10 +81,13 @@ background:#00CC99;
                     <img src="{% static 'assets/img/find_user.png' %}" class="user-image img-responsive"/>
 					</li>				
 			 <li>
-                     <a href="{% url 'dashboard' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
+                     <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
+                    </li>
+		<li>
+                        <a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i> PROFILE</a>
                     </li>		
                     <li>
-                        <a href="{% url 'dashboard' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE AND EXCHANGE</a>
+                        <a href="{% url 'post_new' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE AND EXCHANGE</a>
                     </li>
                       <li>
                         <a href="{% url 'dashboard' %} "><i class="fa fa-desktop fa-3x"></i> GIVE UP</a>
@@ -96,7 +99,7 @@ background:#00CC99;
 			<a href="{% url 'messages_inbox' %} "><i class="fa fa-table fa-3x"></i> ADDRESS</a>
                     </li>
                   <li>
-                        <a href="{% url 'messages_inbox' %} "><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                        <a href="{% url 'dashboard' %} "><i class="fa fa-square-o fa-3x"></i> DASHBOARD</a>
                     </li>	
                 </ul>
                
@@ -108,8 +111,8 @@ background:#00CC99;
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Dashboard</h2>   
-                        <h5>Welcome  , Love to see you back. </h5>
+                     <h1>Dashboard</h1>   
+                        <h3>Welcome  <u><b>{{ request.user.username }}</b></u> to see you back. </h3>
                     </div>
                  </div>            
                  <!-- /. ROW  -->
@@ -160,15 +163,21 @@ background:#00CC99;
              </div>
 		     </div>
 			
-         </div>
+          <hr>
+      
+  
+<hr>
+<!-- end .container_12 -->
 
-                    
-                       
+
+</div>
+
+
+
               
                 
                  <!-- /. ROW  -->
-                 <hr />
-{% block content %}
+                {% block content %}
 {% endblock %}
 </div>     </div>
 </div>                

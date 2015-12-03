@@ -1,7 +1,7 @@
 from django.db import models
+from registration.signals import user_registered
+ 
 
-
-# Create your models here.
 class SignUp(models.Model):
 	email = models.EmailField()
 	full_name = models.CharField(max_length=120, blank=True, null=True)

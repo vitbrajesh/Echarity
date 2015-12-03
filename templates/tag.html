@@ -1,7 +1,17 @@
 {% extends "dashboard.html" %}        
 {% block content %}
-       <div>
-        <h4 style="color:green;margin-left:30px;">REQUEST ID>-..........</h4>
+<div class="container_12" style="background:pink;">
+  <div class="grid_12">
+  <b> <h1> User Profile</h1>
+	<div id="privacy-text">
+          User Profile personalizes your web experience.  You can control how much of your Demographics &amp; Interests you reveal online (from <b>Coarse</b> to <b>Fine</b>).  The more you reveal, the more personalized your experience will be.  Firefox estimates this information based on your browsing behavior.<br/><br/>
+          You are always in control of the information you reveal.  You can adjust your preferences at any time because Mozilla <em>requires</em> websites <strong>not</strong> to track this information of you.
+	</div>
+	</div></div>
+<br>
+<hr>
+       <div style="background:orange;">
+      <h4 style="color:green;margin-left:30px;">REQUEST ID>-..........</h4>
                      <div class="row">
                           <div class="col-md-1"><img id="blah" src="assets/img/find_user.png" class="img-circle"  width="auto" height="100px" alt="your selected item"/></div>
   <div class="col-md-8"><div class="col-md-12"> <h1 style="color:blue; background:yellow">Please me know the image of your sending things</h1></div><p class='lead text-align-center'>{{ title }}</p>
@@ -10,5 +20,5 @@
                       <div class="row">
                           <div class="col-md-8"><h1 style="color:blue; margin-left:40px;background:yellow">I have already posted the image there please see.</h1></div>
   <div class="col-md-4"><img id="blah" src="assets/img/find_user.png" class="img-circle"  width="160px" height="100px" alt="your selected item"/></div>
-                         </div></div>
+                </div></div>
 {% endblock %}  

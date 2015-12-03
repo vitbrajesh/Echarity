@@ -23,9 +23,6 @@ def term(request):
 def gallery(request):
 	return render(request, "gallery.html", {})
 
-@login_required
-def dashboard(request):
-	return render(request, "tag.html", {})
 
 def dash(request):
 	return render(request, "dashboard.html", {})

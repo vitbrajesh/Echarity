@@ -6,7 +6,7 @@
 <div class="tabbable" style="padding-top: 20px; padding-left:50px"> <!-- Only required for left/right tabs -->
 <ul class="nav nav-tabs">
  <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
-  <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLARY</b></a></li>
+ <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
   <li role="presentation"><a href="{% url 'faq' %}"><b>FAQ</b></a></li>
  <li role="presentation"><a href="{% url 'policy' %}"><b>POLICY</b></a></li>
   <li role="presentation"><a href="{% url 'term' %}"><b>TERMS OF USE</b></a></li>
@@ -17,5 +17,4 @@
 </div>
     </div>
     </div>
-   </head>
-</html>
+ 

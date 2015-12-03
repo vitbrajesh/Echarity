@@ -1,0 +1,195 @@
+<br><br><br>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>{% block head_title %}Icharity{% endblock %}</title>
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USER MESSAGE</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href="{% static 'http://fonts.googleapis.com/css?family=Open+Sans' %}" rel='stylesheet' type='text/css' />
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/bootstrap.min.css'  %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
+<script src="{% static 'js/classie1.js' %}"></script>
+<script src="{% static 'js/classie2.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+<script src="{% static 'js/modernizr.js' %}"></script> 
+<!----------------ONLINE------->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+<script src="{% static 'js/facebook.js' %}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+ 
+
+<style>
+.navbar-default{
+background:white;
+}
+.modal-footer{
+background:#00CC99;
+}
+
+#myBODY {
+   background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;
+    background-size:100%;
+   min-height: 530px;
+    weight:120px;
+    padding-top: auto;
+    background-repeat: no-repeat;}
+
+    .mtb
+    {
+        padding-top: 15%;
+        padding-left: 20%;
+}
+   .navbar-collapse
+ {
+        padding-top: 1%;
+        padding-left: auto;}
+</style>
+</head>
+<body>
+
+{% include "products/header.html" %}
+</div>
+<div id="wrapper">
+   <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+                    <img src="{% static 'assets/img/find_user.png' %}" class="user-image img-responsive"/>
+					</li>				
+			 <li>
+                     <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
+                    </li>
+		    <li>
+                        <a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i> PROFILE</a>
+                    </li>			
+                    <li>
+                        <a href="{% url 'dashboard' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE AND EXCHANGE</a>
+                    </li>
+                      <li>
+                        <a href="{% url 'dashboard' %} "><i class="fa fa-desktop fa-3x"></i> GIVE UP</a>
+                    </li>                   
+			  <li  >
+                       <a href="{% url 'dashboard' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
+                    </li>	
+                      <li>
+			<a href="{% url 'messages_inbox' %} "><i class="fa fa-table fa-3x"></i> ADDRESS</a>
+                    </li>
+                  <li>
+                        <a href="{% url 'messages_inbox' %} "><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                    </li>	
+                </ul>
+               
+            </div> 
+            
+        </nav>  
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Dashboard</h2>   
+                        <h5>Welcome  <u><b>{{ request.user.username }}</b></u> to see you back. </h5>
+
+
+                    </div>
+                 </div>            
+                 <!-- /. ROW  -->
+                  <hr />
+                <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-6">           
+		<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
+                 <i class="fa fa-envelope-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_inbox' %}"><p class="text-muted" value="active">MESSAGE</p></a>
+                </div> 
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-green set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-external-link"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_outbox' %}"><p class="text-muted">OUTBOX</p></a>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-pencil-square-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_compose' %}"><p class="text-muted">COMPOSE</p></a>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-trash-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_trash' %}"><p class="text-muted">TRASH</p></a>
+                </div>
+             </div>
+		     </div>
+			
+          <hr>
+      
+
+
+              
+                
+                 <!-- /. ROW  -->
+                {% block content %}
+{% endblock %}
+</div>     </div>
+</div>                
+{% include "products/footer.html" %}
+                        
+                <!-- /. ROW 
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+ 
+</body>
+</html>
+

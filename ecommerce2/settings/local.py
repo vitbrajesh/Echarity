@@ -27,10 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vinaykumar.vk2007@gmail.com'
-EMAIL_HOST_PASSWORD = '8090289260'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 ''' 
@@ -50,20 +51,21 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party apps
     'crispy_forms',
     'registration',
     #my apps
-    'newsletter',
+    #'newsletter',
     'products',
     'item',
     #'items',
     'driver',
     'django_messages',
     'filer',
+     'dashing',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,7 +91,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request', 
+		'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -150,6 +153,4 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
-
-
 

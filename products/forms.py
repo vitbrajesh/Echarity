@@ -1,16 +1,20 @@
 from django import forms
-from django.forms.models import modelformset_factory
-from .models import Variation
+
+from products.models import Product, ProductImage
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Product 
+        fields = ('title', 'description', 'price', 'active', 'quantity','address', 'zip_Code', 'date_created', 'date_Update', 'expire_date', )
 
 
-class VariationInventoryForm(forms.ModelForm):
-	class Meta:
-		model = Variation
-		fields = [
- 			 "price",
- 			 "saleprice",
- 			 "inventory",
- 			 "active",
 
-		]
-VariationInventoryFormSet = modelformset_factory (Variation, form=VariationInventoryForm, extra=1)
+class PostImgForm(forms.ModelForm):
+
+    class Meta:
+        model = ProductImage
+        fields = ('image', )
+
+     
+        
