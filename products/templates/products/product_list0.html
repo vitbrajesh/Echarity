@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block content %}
+<br><br><br><br>
+<ul>
+{% for object in  object_list %}
+    <div class="title">{{  object.title  }}</div>
+    <ul>
+
+       {% for img in object.productimage_set.all %}
+              <a href="/products/{{ object.pk }}/"> <img class = 'img-responsive' border="0" alt="" src=" {{ img.image.url }}"  /></a>
+              {% endfor %}
+            </ul>
+        </div>        
+          {% endfor %}
+          </ul>
+{% endblock %}
+  
+              
+
+
+          
+
+
+
+

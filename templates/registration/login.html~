@@ -21,7 +21,7 @@
 <div>
   <a href="http://www.gmail.com"><img src='{% static "img/gplus.png" %}' /></a></div><br>
   </form>
-<div><a href="{% url 'registration_register' %}" class="btn btn-info btn-l square-btn-adjust">RAGISTRATION FOR THE NEW USER </a></div>        
+<div><a href="{% url 'registration_register' %}" class="btn btn-info btn-l square-btn-adjust">REGISTERATION FOR THE NEW USER </a></div>        
  </div>
 <div class="col-md-7">
 <b><h1>Login</h1><b>

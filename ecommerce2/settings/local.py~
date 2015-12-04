@@ -31,7 +31,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vinaykumar.vk2007@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
 ''' 
@@ -58,11 +58,8 @@ INSTALLED_APPS = (
     'crispy_forms',
     'registration',
     #my apps
-    #'newsletter',
-    'products',
-    'item',
-    #'items',
-    'driver',
+    'newsletter',
+    'products',   
     'django_messages',
     'filer',
      'dashing',

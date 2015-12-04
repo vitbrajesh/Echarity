@@ -48,11 +48,7 @@ if not settings.DEBUG:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vinaykumar.vk2007@gmail.com'
-<<<<<<< HEAD
-EMAIL_HOST_PASSWORD = ''
-=======
 EMAIL_HOST_PASSWORD = 'yourpassword'
->>>>>>> 918e23e427b2bf9802f58de0f82f52e40bed17c7
 EMAIL_PORT = 587
 
 	''' 

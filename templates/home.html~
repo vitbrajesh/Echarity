@@ -39,7 +39,7 @@
 background:white;
 }
 .modal-footer{
-background:#00CC99;
+background:LightSteelBlue;
 }
 
 #myBODY {
@@ -112,15 +112,25 @@ background:#00CC99;
 
 
   <div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">      
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">LOGIN HERE</h4>     
+<div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">LOGIN HERE</h4>
+        </div>
         <div class="modal-body">
-<a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/1sig00.png" %}' /> </a>        
- <a href="{% url 'registration_register' %}"> <img src='{% static "img/snap/1user0000.png" %}' /> </a>
-                </div>       
+<b>Already REGISTER Click Here <b>
+<a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/01sig.png" %}' /> </a><hr>
+<b>First Time User Click Here <b>     
+ <a href="{% url 'registration_register' %}"> <img src='{% static "img/snap/0001user" %}' /> </a>
+                </div>
+<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+       
       </div>
-    </div>
+
+    </div></div>
 
  <!----------------------------------------------------------IMG CONTAINEr from backend ------------------------------>
 
