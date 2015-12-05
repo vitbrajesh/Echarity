@@ -8,7 +8,6 @@ from registration.backends.default.views import RegistrationView
 
 urlpatterns = [
     # Examples:
-
     url(r'^messages/', include('django_messages.urls')),
     #url(r'^$', 'newsletter.views.home', name='home'),
     url(r'^contact/$', 'newsletter.views.contact', name='contact'),
@@ -23,7 +22,7 @@ urlpatterns = [
     #url(r'^dashboard/', include(router.urls)),
     url(r'^$', 'products.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^accounts/', include('registration.urls')),
     url(r'^products/', include('products.urls')),
     # Django JET URLS
     url(r'^jet/', include('jet.urls', 'jet')), 

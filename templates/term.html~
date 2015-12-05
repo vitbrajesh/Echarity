@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-<body>
-    <div id="wrapper" style="width:1288px;height:auto ;padding:10px;border:10px groove DarkGreen; background-color:LightYellow">
+<body>  
 <div class="container">
 <div class="jumbotron"><img src='{% static "img/snap/0terms.jpg" %}'
 	</div>
@@ -11,6 +10,7 @@
                 <div class="row">
                     <div class="col-lg-12"  style="color: Brown">
                         <center><h1><b>Terms of Use<b></h1></center>
+
                         <i style="text-align: center"><h2>"The best way out is always through"</h2></i><br/>
                     </div>
                     <div class="col-lg-12">
@@ -95,8 +95,6 @@
                 <br/>
                 <li style="color: Indigo"><b>General Terms & Conditions</b></li><br/>
                <p>  eCharity Foundation does not guarantee continuous, uninterrupted or secure access to our services, and operation of our site may be interfered with by numerous factors outside of our control. Headings are for reference purposes only and in no way define, limit, construe or describe the scope or extent of such section. Our failure to act with respect to a breach by the user or others does not waive our right to act with respect to subsequent or similar breaches. This Agreement sets forth the entire understanding and agreement between us with respect to the subject matter hereof.</p>
-
-
   </ul>
 
                     </div>
@@ -106,21 +104,9 @@
     </div>
              <!-- /. PAGE INNER  -->
             </div>
-         <!-- /. PAGE WRAPPER  -->
-        </div>
-          {% endblock %}
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
-
-</body>
+         <br/>
+                <br/>
+         </body>
 </html>
-
+ {% endblock %}
 

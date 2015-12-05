@@ -78,7 +78,11 @@ background:#00CC99;
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="{% static 'assets/img/find_user.png' %}" class="user-image img-responsive"/>
+{% load staticfiles %}
+                    <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle"  width="160px" height="150px" alt="your selected item"/>
+                    <img />
+    <input type='file' id="imgInp" class="img-circle" value="upload"/>
+
 					</li>				
 			 <li>
                      <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
@@ -107,8 +111,8 @@ background:#00CC99;
             
         </nav>  
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-            <div id="page-inner">
+        <div id="page-wrapper" style="background-color:LightSkyBlue">
+            <div id="page-inner" >
                 <div class="row">
                     <div class="col-md-12">
                      <h1>Dashboard</h1>   
@@ -117,7 +121,7 @@ background:#00CC99;
                  </div>            
                  <!-- /. ROW  -->
                   <hr />
-                <div class="row">
+                <div class="row" >
                 <div class="col-md-3 col-sm-6 col-xs-6">           
 		<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
@@ -177,7 +181,8 @@ background:#00CC99;
               
                 
                  <!-- /. ROW  -->
-                {% block content %}
+{% block content %}
+<body style="background-color:LightYellow">
 {% endblock %}
 </div>     </div>
 </div>                

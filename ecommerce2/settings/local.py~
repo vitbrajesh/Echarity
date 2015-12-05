@@ -62,7 +62,8 @@ INSTALLED_APPS = (
     'products',   
     'django_messages',
     'filer',
-     'dashing',
+    'dashing',
+    'dashboard',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,6 +98,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce2.wsgi.application'
 
+AUTH_PROFILE_MODULE = 'dashboard.UserProfile'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

@@ -74,7 +74,7 @@ Products Echarity
 {% endblock %}
  <div class="container">
 <div class='row'>
-
+<p>{{ request.user.username }}<p>
 {% for object in object_list %}
 
 		<div class='col-md-4'>
@@ -90,7 +90,7 @@ Products Echarity
 {% endif %}
 {% endif %}
 <div class="caption">
-
+{{ request.user.username }}
 <p><u>{{ object.description|truncatewords:15}}</u></p>
 <p><a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/products/{{ object.pk }}/" class="btn btn-success" role="button">MORE ITEMS</a></p></div>

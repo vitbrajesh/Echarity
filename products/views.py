@@ -23,7 +23,7 @@ from django.shortcuts import redirect
 
 def home(request):
 	sliders = Slider.objects.all()
-	products = Product.objects.filter(title__contains='E').order_by('-title')
+	products = Product.objects.filter(date_created__lte=timezone.now()).order_by('-productimage')[:8]
 	template = 'home.html'	
 	context = {
 		"products": products,
@@ -133,7 +133,7 @@ def post_new(request):
             post.save()
             #return redirect('products.views.ProductDetailView', pk=post.pk)
             #return render(request, 'products/product_list.html')   
-            return redirect('products.views.add_img', pk=post.pk) 
+            return redirect('products.views.add_img',pk=post.pk) 
     else:
         form = PostForm()
     return render(request, 'products/post_edit.html', {'form': form})
@@ -149,11 +149,10 @@ def add_img(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            #return redirect('products.views.ProductDetailView', pk=post.pk)
-            #return render(request, 'products/product_list.html')   
+       
             return redirect('products.views.post_detail', pk=post.pk) 
     else:
-        form = PostForm()
+        form = PostImgForm()
     return render(request, 'products/post_edit.html', {'form': form})   
     
 #####################################################################################

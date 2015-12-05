@@ -2,19 +2,18 @@
 {% load staticfiles %}
 {% block content %}
 <body>
-    <div id="wrapper" style="width:1288px;height:1200px;padding:10px;border:10px groove DarkGreen; background-color:LightYellow">
+    <div id="wrapper" style="width:1288px;height:1200px;padding:17px; background-color:Lavender">
 <div class="container">
-<div class="jumbotron"><img src='{% static "img/snap/0Privacy.png" %}'
+<div> <img src='{% static "img/snap/policy.png" %}' style="padding-left:60px">
 	</div>
 		</div>
-
+		<div class="row">
+		    <div class="col-md-8" style="padding-left:300px">
+		        <p><h2 style="color:Indigo">Our Policy = Your Believes + Your Trust</h2></p>
+		    </div>
+		</div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <center><h1><b>PRIVACY POLICY<b></h1></center>
-                        <i style="text-align: center"><h2>"We value your privacy"</h2></i><br/>
-                     </div>
-               <hr />
-                    <div class="col-lg-12" style="padding-top:20px">
+                    <div class="col-lg-6" style="padding-top:20px">
             <ul>
 
                 <li> eCharity will keep the user information collected through its website ( www.echarity.org ) strictly confidential. It will not be shared with any external agencies or individuals. However, Smile Foundation will keep the users updated about its happenings and developments through bulletins and newsletters with an option of not to subscribe the same.</li><br/>
@@ -27,25 +26,33 @@
                     <li>Your payment processing details</li>
                     <li>Any other data as eCharity Foundation may require</li>
                 </ol>
-                </li><br/>
-                <li> General browsing of Smile Foundation website is anonymous and it does not register the user’s personal information except the time, date and place of visits and the name of internet service provider. However, this information is not shared by the organization with external agencies.</li><br/>
+                </li>
+                </div>
+                <div class="col-md-6">
+                  <img src='{% static "img/snap/policy.jpeg" %}' style="height:250px; width: 400px; padding-left:70px; padding-top:50px">
+                </div>
+                </div>
+                <br/>
+                    <div class="row">
+                    <div class="col-md-10" style="padding-left:50px">
+                                    <li> General browsing of Smile Foundation website is anonymous and it does not register the user’s personal information except the time, date and place of visits and the name of internet service provider. However, this information is not shared by the organization with external agencies.</li><br/>
                 <li>All relevant information collected through eCharity Foundation website is handled and used by internal and authorized officials only.</li><br/>
                 <li>eCharity Foundation is not liable for any form of loss, damage or harm caused to the users as a result of misuse of personal information by a third party, tracked through a liked site of Smile Foundation or otherwise, and who is not an employee of Smile Foundation.</li><br/>
                 <li>eCharity Foundation holds the discretion to modify the terms and conditions under privacy policy.</li>
                 <li>Contents published in Smile Foundation website including graphics, write-ups, logos, pictures, images and software are the property of Smile Foundation and its partners or associates and the same is protected. Users must seek formal permission before using any of these information and any misuse of the same will automatically hold the (mis)user liable.</li>
   </ul>
+                <br><br><br>
+                </div>
+                <div class="col-md-8"  style="color: Brown; font: oswald; float: right">
+                     <h2>"We value your privacy"</h2><br/>
+                     </div>
+                     
+                </div>
 
-                    </div>
+</div>
 
-                    </div>
-
-    </div>
              <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
-        </div>
 
-     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
@@ -59,4 +66,5 @@
 </body>
 </html>
 {% endblock %}
+
 
