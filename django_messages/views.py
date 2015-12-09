@@ -189,9 +189,7 @@ def undelete(request, message_id, success_url=None):
         return HttpResponseRedirect(success_url)
     raise Http404
 
-@login_required
-def faq(request):
-	return render(request, "faq.html", {})
+
 
 
 @login_required

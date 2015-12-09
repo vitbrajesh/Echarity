@@ -1,70 +1,309 @@
 {% extends "base.html" %}
-{% load staticfiles %}
 {% block content %}
+{% load staticfiles %} 
 <body>
-    <div id="wrapper" style="width:1288px;height:1200px;padding:17px; background-color:Lavender">
-<div class="container">
-<div> <img src='{% static "img/snap/policy.png" %}' style="padding-left:60px">
-	</div>
-		</div>
-		<div class="row">
-		    <div class="col-md-8" style="padding-left:300px">
-		        <p><h2 style="color:Indigo">Our Policy = Your Believes + Your Trust</h2></p>
-		    </div>
-		</div>
+    <div class="wrapper"style="background-color:Lavender">
+<img src='{% static "img/snap/00ser.jpg" %}'
+
+    <section id="company-information" class="choose">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0ms">
+                    <img src="{% static 'fotter/images/services/4.png' %}" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6 padding-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0ms">
+                    <h2>Why Choose Us?</h2>
+                    <p>All relevant information collected through eCharity Foundation website is handled and used by internal and authorized officials only.<br /> Our Policy = Your Believes + Your Trust.</p>
+                    <ul class="elements">
+                        <li class="wow fadeInUp" data-wow-duration="900ms" data-wow-delay="100ms"><i class="fa fa-angle-right"></i> We holds the user friendly policies</li>
+                        <li class="wow fadeInUp" data-wow-duration="800ms" data-wow-delay="200ms"><i class="fa fa-angle-right"></i> Help those who really need yours.</li>
+                        <li class="wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms"><i class="fa fa-angle-right"></i> Strictly attention for user confidentia details disclose.</li>
+                        <li class="wow fadeInUp" data-wow-duration="600ms" data-wow-delay="400ms"><i class="fa fa-angle-right"></i> Not taking any cash or banking statments.</li>
+                        <li class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms"><i class="fa fa-angle-right"></i> always open to learn from our user/donater.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#company-information-->
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <img src="{% static 'fotter/images/home/icon1.png' %}" alt="">
+                        </div>
+                        <h2>Incredible Humanity</h2>
+                        <p>Not only for sake a show-off or for money; We love to help society with our Passions round.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <img src="{% static 'fotter/images/home/icon2.png' %}" alt="">
+                        </div>
+                        <h2>Donate/Exchange</h2>
+                        <p>Providing the plateform for donater and user to intarct with each-othere and feel the proud for help togather.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                            <img src="{% static 'fotter/images/home/icon3.png' %}" alt="">
+                        </div>
+                        <h2>Our Shelter</h2>
+                        <p>shelter program is based on communal living, in a home like environment. Communal living means sharing living.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <img src="{% static 'fotter/images/services/1.png' %}" alt="">
+                        </div>
+                        <h2>Resource</h2>
+                        <p>We promote public trust and confidence in the charitable sector and encourage the effective use of charitable resources around us.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <img src="{% static 'fotter/images/services/2.png' %}" alt="">
+                        </div>
+                        <h2>Nonprofit Consulting</h2>
+                        <p>We offer general training and consulting services pro bono to nonprofits so that they can further develop organizational competencies to realize greater social impact in futre.</p>
+                    </div>
+                </div> 
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                            <img src="{% static 'fotter/images/services/3.png' %}" alt="">
+                        </div>
+                        <h2>Hand-Sharing</h2>
+                        <p>We identify innovative and best practices in capacity building and share available skills, strategies and tools with the NGO & Charitable community..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#services-->
+
+    <section id="action" class="responsive">
+        <div class="vertical-center">
+             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6" style="padding-top:20px">
-            <ul>
-
-                <li> eCharity will keep the user information collected through its website ( www.echarity.org ) strictly confidential. It will not be shared with any external agencies or individuals. However, Smile Foundation will keep the users updated about its happenings and developments through bulletins and newsletters with an option of not to subscribe the same.</li><br/>
-
-                <li>While forwarding a donation for eCharity Foundation the well-wishers have to submit a few personal information as it would help us ensuring genuine contributions:
-                <ol>
-                   <li>Your name</li>
-                    <li>Your email and mailing address</li>
-                    <li>Your telephone number </li>
-                    <li>Your payment processing details</li>
-                    <li>Any other data as eCharity Foundation may require</li>
-                </ol>
-                </li>
+                    <div class="action take-tour">
+                        <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                           <h1 class="title">E-charity Corporate </h1>
+                            <p>A responsive and trustfull &amp; for multipurpose Social Events.</p>
+                        </div>
+                        <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <div class="tour-button">
+                                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
+                             </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <img src='{% static "img/snap/policy.jpeg" %}' style="height:250px; width: 400px; padding-left:70px; padding-top:50px">
-                </div>
-                </div>
-                <br/>
-                    <div class="row">
-                    <div class="col-md-10" style="padding-left:50px">
-                                    <li> General browsing of Smile Foundation website is anonymous and it does not register the user’s personal information except the time, date and place of visits and the name of internet service provider. However, this information is not shared by the organization with external agencies.</li><br/>
-                <li>All relevant information collected through eCharity Foundation website is handled and used by internal and authorized officials only.</li><br/>
-                <li>eCharity Foundation is not liable for any form of loss, damage or harm caused to the users as a result of misuse of personal information by a third party, tracked through a liked site of Smile Foundation or otherwise, and who is not an employee of Smile Foundation.</li><br/>
-                <li>eCharity Foundation holds the discretion to modify the terms and conditions under privacy policy.</li>
-                <li>Contents published in Smile Foundation website including graphics, write-ups, logos, pictures, images and software are the property of Smile Foundation and its partners or associates and the same is protected. Users must seek formal permission before using any of these information and any misuse of the same will automatically hold the (mis)user liable.</li>
-  </ul>
-                <br><br><br>
-                </div>
-                <div class="col-md-8"  style="color: Brown; font: oswald; float: right">
-                     <h2>"We value your privacy"</h2><br/>
-                     </div>
-                     
-                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#action-->
 
-</div>
+    <section id="recent-projects" class="recent-projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Recent Events</h1>
+                <p class="text-center padding-bottom wow fadeInDown" data-wow-duration="400ms" data-wow-delay="400ms">We organize various charity event for everyone. <br>Taking part in any of our events means you’ll be a part of something special. </p>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/1.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/1.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Tamilnadu Flood Relief</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/2.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/2.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Nepal Camp</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="500ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/3.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/3.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Social events</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/4.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/4.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Inventry Auction</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="700ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/5.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/5.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Education</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="800ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/6.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/6.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/7.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/7.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Financial Independence</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="1000ms">
+                    <div class="portfolio-wrapper">   
+                        <div class="portfolio-single">
+                            <div class="portfolio-thumb">
+                                <img src="{% static 'fotter/images/portfolio/8.jpg' %}" class="img-responsive" alt="">
+                            </div>
+                            <div class="portfolio-view">
+                                <ul class="nav nav-pills">
+                                    <li><a href="{% static 'fotter/images/portfolio/8.jpg' %}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2>Elder Self-help Groups</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#recent-projects-->
 
-             <!-- /. PAGE INNER  -->
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <p><img src="{% static 'fotter/images/home/clients.png' %}" class="img-responsive" alt=""></p>
+                        <h1 class="title">Happy Clients</h1>
+                        <p>Our sponser are our clients and we work on thier suggestion<br> for the every of our step they back-up supports for us. </p>
+                    </div>
+                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client1.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client2.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client3.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client4.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client5.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'fotter/images/home/client6.png' %}" class="img-responsive" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!--/#clients-->
 
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    <!--/#team-->
 
-</body>
+    
+    
+    <script type="text/javascript" src="{% static 'fotter/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/wow.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/main.js' %}"></script>   
+
 </html>
 {% endblock %}
+
 
 

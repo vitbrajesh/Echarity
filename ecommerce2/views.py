@@ -9,11 +9,14 @@ def about(request):
 def faq(request):
 	return render(request, "faq.html", {})
 
-def policy(request):
-	return render(request, "policy.html", {})
+def service(request):
+	return render(request, "service.html", {})
 
 def term(request):
 	return render(request, "term.html", {})
 
 def gallery(request):
 	return render(request, "gallery.html", {})
+
+def tour(request):
+	return render(request, "tour.html", {})

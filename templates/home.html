@@ -101,7 +101,7 @@ background:LightSteelBlue;
 		<div class="flexsearch--wrapper">
 		<form class="flexsearch--form"  method="GET" role="search" action='{% url "products" %}'>
 		<div class="flexsearch--input-wrapper">
-			<input class="flexsearch--input" type="search" placeholder="search" name='q'>
+			<input class="flexsearch--input" type="search" placeholder="Search your Item Here" name='q'>
 		</div>
 		<input class="flexsearch--submit" type="submit" value="&#10140;" onclick="myfunction()"/>
 		</form>
@@ -114,9 +114,9 @@ background:LightSteelBlue;
   <div class="modal fade" id="login" role="dialog">
 <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        <div class="modal-header">
+         <div class="modal-footer">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">LOGIN HERE</h4>
+          <h4 class="modal-title">LOGIN HERE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
         </div>
         <div class="modal-body">
 <b>Already REGISTER Click Here <b>
@@ -161,7 +161,7 @@ background:LightSteelBlue;
 <div class="caption">
 <p><u>{{ product.description|truncatewords:15}}</u></p>
 
-<a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{% url 'products' %}" class="btn btn-success" role="button">MORE ITEMS</a></div>
 		   	 </div>
 
@@ -214,7 +214,7 @@ background:LightSteelBlue;
 		</div>
 		<br><br>		
 		</div>
-<div style="height:200px; background-color:LightSkyBlue">
+<div style="height:230px; background-color:LightSkyBlue">
 
 
     <div class="col-md-6" style="height:200px; padding-top:10px">
@@ -244,8 +244,18 @@ background:LightSteelBlue;
 	</div>
 		</div>  
 <div class='col-sm-9'></div>FOllow Us<br>
-<div class='col-sm-9'></div><a href="http://www.twitter.com"><img src='{% static "img/tw1.png" %}'/></a><a href="http://www.twitter.com"><img src='{% static "img/fb0.png" %}'/></a><a href="http://www.twitter.com"><img src='{% static "img/gplus0.png" %}'/></a>
-</div> </div></div><br><br>
+<div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div> </div></div><br><br>
 <div class="footer">
 {% include "products/footer.html" %}
 </div>

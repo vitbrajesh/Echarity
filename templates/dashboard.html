@@ -43,6 +43,9 @@
  
 
 <style>
+body {
+    font-family: Oswald Light;
+}
 .navbar-default{
 background:white;
 }
@@ -91,12 +94,9 @@ background:#00CC99;
                         <a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i> PROFILE</a>
                     </li>		
                     <li>
-                        <a href="{% url 'post_new' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE AND EXCHANGE</a>
+                        <a href="{% url 'post_new' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
-                      <li>
-                        <a href="{% url 'dashboard' %} "><i class="fa fa-desktop fa-3x"></i> GIVE UP</a>
-                    </li>                   
-			  <li  >
+                       <li  >
                        <a href="{% url 'dashboard' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
                     </li>	
                       <li>
@@ -129,7 +129,7 @@ background:#00CC99;
                 </span>
                 <div class="text-box" >
                     <p class="main-text"></p>
-                    <a href="{% url 'messages_inbox' %}"><p class="text-muted" value="active">MESSAGE</p></a>
+                    <a href="{% url 'messages_inbox' %}"><p class="text-muted">INBOX</p></a>
                 </div> 
              </div>
 		     </div>
@@ -151,7 +151,7 @@ background:#00CC99;
                 </span>
                 <div class="text-box" >
                     <p class="main-text"></p>
-                    <a href="{% url 'messages_compose' %}"><p class="text-muted">COMPOSE</p></a>
+                    <a href="{% url 'messages_compose' %}"><p class="text-muted">TEXT</p></a>
                 </div>
              </div>
 		     </div>
@@ -176,17 +176,32 @@ background:#00CC99;
 
 </div>
 
+<script type="text/javascript">
+            $(document).ready(function(){
+            $('#imgInp').on('change', function() {
+            readPath(this);
+            });
+            });
 
+            function readPath(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+          $('#blah').attr('src', e.target.result);
+            }
+          reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
 
               
                 
                  <!-- /. ROW  -->
 {% block content %}
-<body style="background-color:LightYellow">
 {% endblock %}
 </div>     </div>
 </div>                
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
                         
                 <!-- /. ROW 
      <!-- /. WRAPPER  -->

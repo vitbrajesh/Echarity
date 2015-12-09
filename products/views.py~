@@ -133,7 +133,7 @@ def post_new(request):
             post.save()
             #return redirect('products.views.ProductDetailView', pk=post.pk)
             #return render(request, 'products/product_list.html')   
-            return redirect('products.views.add_img',pk=post.pk) 
+            return redirect('products.views.add_img') 
     else:
         form = PostForm()
     return render(request, 'products/post_edit.html', {'form': form})
@@ -141,19 +141,17 @@ def post_new(request):
 #####################################################################################
 
 
-def add_img(request, pk):
+def add_img(request):
     if request.method == "POST":
-        form = PostImgForm(request.POST)
+        form = PostImgForm(request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
             post.save()
        
-            return redirect('products.views.post_detail', pk=post.pk) 
+            return redirect('products.views.post_new') 
     else:
         form = PostImgForm()
-    return render(request, 'products/post_edit.html', {'form': form})   
+    return render(request, 'products/post_img.html', {'form': form})   
     
 #####################################################################################
 

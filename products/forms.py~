@@ -1,5 +1,4 @@
 from django import forms
-
 from products.models import Product, ProductImage
 
 class PostForm(forms.ModelForm):
@@ -11,7 +10,7 @@ class PostForm(forms.ModelForm):
 
 
 class PostImgForm(forms.ModelForm):
-
+  
     class Meta:
         model = ProductImage
         fields = ('product','image', )

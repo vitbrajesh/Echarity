@@ -1,87 +1,281 @@
 {% extends "base.html" %}
-{% load staticfiles %}
-<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
-<link href="{% static 'css/bootstrap.min.css'  %}" type="text/css" />
-<link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
-<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
-	<!-- BOOTSTRAP STYLES-->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
 {% block content %}
+{% load staticfiles %}  
+ 
+
 <body>
-    <div class="wrapper" style="background-color:Lavender">
+    <div class="wrapper"style="background-color:Lavender">
 			<!-- Main component for a primary marketing message or call to action -->
-<br>
-			<div><img src='{% static "img/snap/about.jpg" %}' style="padding-left:120px">
-	</div>
-	<br>
+<img src= "{% static 'img/snap/about1.png' %}"/>
 
-	<div class="col-md-8">
-                 <h3 style="font: oswald; padding-left:400px; color: DarkSlateBlue ">Anticipate charity by preventing poverty</h3>
-                   <br>  </div>
-<div class="container">
-
-                <div class="row">
-                     <div class="col-md-4">
-                    <img src='{% static "img/snap/mission.jpeg" %}'>
-                     </div>
-                    <div class="col-lg-8" style="float: right; padding:top: 30px">
-                    eCharity foundation is an international not-for-profit (or non-profit) organization that was founded to support the victims of domestic violence (with a particular focus on victims of acid splash). Our mission is to reach out to this most vulnerable, often neglected and forgotten members of society and help them out by providing them different types of support. The first and foremost goal is to restore their health and well-being, as much as possible, by providing them with cutting-edge medical treatments. Raising awareness is yet another goal of eCharity. We believe, by educating, not punishing, we can reduce and eventually eliminate the occurrence of this crime and crimes like this. Our ultimate mission is to support the victims to get back on their feet, once again, gain their self-confidence and to live a full life!
-                            <br><br>
-     </div>
-     </div>
-
-                 <!-- /. ROW  -->
-                 <br><br>
-                    <div class="row">
-                    <div class="col-lg-7">
-                     Our vision is to create a world in which all human beings including women and children live a healthy life without being threatened by Domestic Violence. The victims of domestic violence should receive adequate support, morally and otherwise, to mitigate and minimize the impact of such inhumane actions on their lives.
-                     </div>
-              <div class="col-md-4">
-                  <img src='{% static "img/snap/vision1.jpeg" %}' style="float:right">
-                  </div>
-                  </div>
-                  <br>
-                  <div class="col-md-12">
-                     <img src='{% static "img/snap/principle.png" %}' style="height:100px; width:500px">
-                      <br><br>
-                     </div>
-                    <div class="col-lg-12">
-            <ul>
-
-                <li> Commitment to creating a world, where victims of domestic violence are receiving the most effective support they need to get back to their regular life.</li><br/>
-
-                <li>Particular focus on the needs of women & children, who are affected by the violent action of  acid splash , their medical and financial needs.</li><br/>
-                <li> Safety & Security of individuals are the very basic right that should not be taken away under any circumstances.</li><br/>
-                <li>Empowering victims of domestic violence to the largest possible extent. </li><br/>
-                <li>Creating opportunities to make the victims more self-sufficient, financially independent and to be able to create income and use their capacity and talent to live a life, as they deserve!</li><br/>
-                <li>Commitment to advancing social justice and equality through Training, Awareness & Education.</li>
-  </ul>
-
-                    </div>
-     <!-- /. PAGE INNER  -->
+    <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src= "{% static 'img/01abt.png' %}" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <p> eCharity foundation is an international not-for-profit (or non-profit) organization that was founded to support the victims of domestic violence (with a particular focus on victims of acid splash). Our mission is to reach out to this most vulnerable, often neglected and forgotten members of society and help them out by providing them different types of support. 
+                       </p>
+                    <p>The first and foremost goal is to restore their health and well-being, as much as possible, by providing them with cutting-edge medical treatments. Raising awareness is yet another goal of eCharity. We believe, by educating, not punishing, we can reduce and eventually eliminate the occurrence of this crime and crimes like this. Our ultimate mission is to support the victims to get back on their feet, once again, gain their self-confidence and to live a full life!.</p>
+                </div>
             </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="{% static 'js/jquery.metisMenu.js' %}"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="{% static 'js/custom.js' %}"></script>
-    	</div>
-</div>
-</body>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <img src="{% static 'fotter/images/aboutus/logo3.png' %}" alt="">
+                        </div>
+                        <h2>Charity</h2>
+                        <p>It's time to re-think charity.It's time to give charity the big-league freedoms we really give to business.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <img src="{% static 'fotter/images/aboutus/h11.jpg' %}" alt="">
+                        </div>
+                        <h2>Funding</h2>
+                        <p>It's time to re-think charity.It's time to give charity the big-league freedoms we really give to business.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                            <img src="{% static 'fotter/images/aboutus/we3.jpeg' %}" alt="">
+                        </div>
+                        <h2>Social-Event</h2>
+                        <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#services-->
+
+    <section id="action" class="responsive">
+        <div class="vertical-center">
+             <div class="container">
+                <div class="row">
+                    <div class="action take-tour">
+                        <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <h1 class="title">E-charity Corporate </h1>
+                            <p>A responsive and trustfull &amp; for multipurpose Social Events.</p>
+                        </div>
+                        <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <div class="tour-button">
+                                <a href="/tour/" class="btn btn-common">TAKE THE TOUR</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#action-->
+
+    <section id="team">
+        <div class="container">
+            <div class="row">
+                <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Meet the Team</h1>
+                <p class="text-center wow fadeInDown" data-wow-duration="400ms" data-wow-delay="400ms">We have the expert of IT & Managment. <br>
+                Your are first for them. </p>
+                <div id="team-carousel" class="carousel slide wow fadeIn" data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators visible-xs">
+                        <li data-target="#team-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#team-carousel" data-slide-to="1"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/1.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/2.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/3.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/1.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/4.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/3.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/2.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NAME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="team-single-wrapper">
+                                    <div class="team-single">
+                                        <div class="person-thumb">
+                                            <img src="{% static 'fotter/images/aboutus/1.jpg' %}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="social-profile">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="person-info">
+                                        <h2>NME XYZ</h2>
+                                        <p>CEO &amp; Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left team-carousel-control hidden-xs" href="#team-carousel" data-slide="prev">left</a>
+                    <a class="right team-carousel-control hidden-xs" href="#team-carousel" data-slide="next">right</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#team-->
+
+    
+    
+    <script type="text/javascript" src="{% static 'fotter/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/wow.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fotter/js/main.js' %}"></script>   
+
 </html>
 {% endblock %}
 

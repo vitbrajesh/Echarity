@@ -1,48 +1,47 @@
 {% extends "base.html"%}
-<br>
+
 {% block content %}
+<br><br><br>
+{% load staticfiles %}
 <div class="container">
 <div class="row">
 
 
-    <div class='col-sm-8'>
+    <div class='col-sm-7'>
          <h2>{{ object.title }}</h2>
+ <div>
          {% if object.productimage_set.count > 0 %}
-        <div>
-              {% for img in object.productimage_set.all %}
+          {% for img in object.productimage_set.all %}
+
               <img class = 'img-responsive' src="{{ img.image.url }}" />
               {% endfor %}
-             <U> <p class='lead'>{{ object.description }}</p></u>
+{% else %}
+<img id="blah" src="{% static 'img/snap/0noitem.gif' %}"   width="190px" height="150px" alt="No Image of item"/>
+  {% endif %}           
         </div>        
-          {% endif %}
-        
+          
+        <U> <p class='lead'>{{ object.description }}</p></u>
 
     </div>
 
     <!-- Product Sidebar --> 
-    <div class='col-sm-4'>
-        <h3>{{ object.price }}</h3>
-        {% if object.variation_set.count > 1 %}
-            <select class="form-control">
-                {% for vari_obj in object.variation_set.all %}
-                <option value="{{ vari_obj.id }}"> {{ vari_obj }}</option>  
-                {% endfor %}
-            </select>
-        {% endif %}
-        <br/>
+    <div class='col-sm-5'>
+       
+<br><br><br>
  <p>ADD ON: {{object.date_created }}</p><br>
+</p>Last Update:{{object.date_Update}}</p><br>
 <p>Remains: {{object.quantity }}</p>
-        <a href="#">Add to Cart</a>
+  
 <button type="button"  class="btn btn-info btn-lg" >Excahnge/Donate</button><br>
     </div>
        
 </div>
-</p>Last Update:{{object.date_Update}}</p><br>
+
        </p>Expire On:{{object.expire_date}}</p> <br> 
 
         <br/> <h4>Related Project</h4>
         <hr/>
- <u><a href="{% url 'products' %}"><b><--BACK TO PRODUCT LIST<b></a></u>
+ <u><a href="{% url 'products' %}"><b><--BACK TO PRODUCT LIST<b></a></u><hr>
     </div>
 </div>
 </div>

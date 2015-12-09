@@ -14,7 +14,7 @@ urlpatterns = [
     # url(r'^(?P<id>\d+)', 'products.views.product_detail_view_func', name='product_detail_function'),
     url(r'^add/new/$', views.post_new, name='post_new'),
     url(r'^add/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
-   url(r'^add/img/(?P<pk>[0-9]+)/$', views.add_img, name='add_img'),
-    url(r'^add/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
+   url(r'^add/img/$', views.add_img, name='add_img'),
+    url(r'^add/img(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
    
 ]
