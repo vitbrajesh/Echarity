@@ -81,18 +81,14 @@ background:#00CC99;
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-{% load staticfiles %}
-                    <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle"  width="160px" height="150px" alt="your selected item"/>
-                    <img />
-    <input type='file' id="imgInp" class="img-circle" value="upload"/>
-
-					</li>				
+    {% load staticfiles %}
+                    <img src="{{ user.userprofile.get_avatar }}"  class="img-circle"  width="170px" height="160px" alt="your selected item"/>
+	</li>	
+ <li><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.first_name}}&nbsp;{{ request.user.last_name}}</b>
+                   </li>			
 			 <li>
                      <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
-                    </li>
-		<li>
-                        <a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i> PROFILE</a>
-                    </li>		
+                    </li>			
                     <li>
                         <a href="{% url 'post_new' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
@@ -100,10 +96,13 @@ background:#00CC99;
                        <a href="{% url 'dashboard' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
                     </li>	
                       <li>
-			<a href="{% url 'messages_inbox' %} "><i class="fa fa-table fa-3x"></i> ADDRESS</a>
+                        <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
+                    </li>	
+                      <li>
+			<a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i>IMAGE</a>
                     </li>
                   <li>
-                        <a href="{% url 'dashboard' %} "><i class="fa fa-square-o fa-3x"></i> DASHBOARD</a>
+                        <a href="{% url 'dashboard' %} "><i class="fa fa-square fa-3x"></i> DASHBOARD</a>
                     </li>	
                 </ul>
                

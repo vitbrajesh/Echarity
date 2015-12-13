@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.utils.text import slugify
 from django.utils import timezone
 # Create your models here.
+AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
 class ProductManager (models.Manager):
     def get_queryset(self):

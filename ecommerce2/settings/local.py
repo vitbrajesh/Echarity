@@ -58,12 +58,14 @@ INSTALLED_APPS = (
     'crispy_forms',
     'registration',
     #my apps
+    'user_profile', 
     'newsletter',
     'products',   
     'django_messages',
     'filer',
     'dashing',
     'dashboard',
+  
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,6 +82,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'ecommerce2.urls'
+
 
 TEMPLATES = [
     {
@@ -100,7 +103,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce2.wsgi.application'
 
-AUTH_PROFILE_MODULE = 'dashboard.UserProfile'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

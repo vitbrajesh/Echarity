@@ -143,7 +143,7 @@ def post_new(request):
 
 def add_img(request):
     if request.method == "POST":
-        form = PostImgForm(request.FILES)
+        form = PostImgForm(request.POST,request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
