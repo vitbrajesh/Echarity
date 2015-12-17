@@ -1,4 +1,3 @@
-
 from cStringIO import StringIO
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -21,7 +20,7 @@ class UserProfile(models.Model):
 	def save_avatar(self, filename):
 
 		extension = filename[filename.rfind('.'):]
-		new_path = 'user_profile/%s%s-avatar%s' %(self.user.first_name, self.user.pk, extension)
+		new_path = 'user_profile/%s%s%s' %(self.user.first_name, self.user.pk, extension)
 		return new_path
 
 	avatar = models.ImageField(upload_to=save_avatar, blank=True)

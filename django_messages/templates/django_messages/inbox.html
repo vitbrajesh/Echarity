@@ -3,9 +3,12 @@
 {% load url from future %}
 
 {% block content %}
-<h1><b>{% trans "Inbox" %}<b></h1>
-<hr/>
+<body>
+<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1><b>{% trans "Inbox" %}<b></h1><br><br><br><hr/>
+<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
 {% if message_list %} 
+
 <div class="row">
 <div class="col-md-3">
 <h2>{% trans "Recipient" %}</h2></div>
@@ -32,6 +35,8 @@
     
 
 {% else %}
-<p>{% trans "No messages." %}</p>
-{% endif %}  
+<p><h1>{% trans "There is no messages in Your Box.." %}</h1></p>
+{% endif %} 
+</div> </div>
+</body>
 {% endblock %}

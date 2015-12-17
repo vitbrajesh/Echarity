@@ -2,9 +2,11 @@
 {% load i18n %} 
 {% load url from future %}
 
-{% block content %} 
-<h1><b>{% trans "Deleted Messages" %}<b></h1>
-<hr/>
+{% block content %}
+<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1><b>{% trans "Deleted Message" %}<b></h1><br><br><br><hr/>
+<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br>
+
 {% if message_list %} 
 <div class="row">
 <div class="col-md-3">
@@ -31,8 +33,8 @@
 {% endfor %}
    
 {% else %}
-<p>{% trans "No messages." %}</p>
+<p><h1>{% trans "There is no Trash messages in Your Box.."  %}</h1></p>
 {% endif %}   
 <br />
-<p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p>
+<p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p></div>
 {% endblock %}

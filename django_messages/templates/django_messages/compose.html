@@ -1,13 +1,19 @@
-{% extends "dashboard.html" %}        
+{% extends "dashboard.html" %}
+{% load crispy_forms_tags %}        
 {% load i18n %} 
 {% block content %} 
-<h1>{% trans "Compose Message"%}</h1>
+<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1><b>{% trans "Compose Message" %}<b></h1><br><br><br><hr/>
+<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
+<h2>SEND MESSAGE FOR REQUEST..</h2><br><br>
 <form action="" method="post">
 {% csrf_token %} 
 <table>
-{{ form.as_table }}
+{{ form|crispy }}
 </table>
-<input type="submit" value="{% trans "Send" %} &raquo;"/>
+<input type="submit" class="btn btn-info btn-lg" value="{% trans "Send Message" %} &raquo;"/>
 </form>
+</div>
 
+</div>
 {% endblock %}

@@ -1,0 +1,55 @@
+{% extends "dashboard.html" %}
+
+{% block content %}
+   <div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h2 style="color:white"><center><b>"PAST DEATILS OF YOUR DONATION"<b></center></h2><br><br><hr/>
+<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
+    <u><h3 style="color:DarkCyan">Edit OR View Your Past Action with US.</h3></u><br>
+	    <div class="row">
+        <div class="post">
+		
+           <div class="col-md-3">
+			   
+			<h3><label> ProductImage</label></h3><hr>
+			  {% for Product in posts %}
+			{% if Product %}
+                        <ul>                               
+                          <a href="{% url 'post_detail_history' pk=Product.pk %}">  <img src="{{ Product.docfile.url }}" width="60px" height=60px" alt="{{ Product.docfile.name }}"></a>
+                               </li>
+                        
+                        </ul>
+                {% else %}
+                        <p>No documents.</p>
+                {% endif %}<hr>
+                {% endfor %}
+			</div>
+            
+			<div class="col-md-2">
+			<h3><label> Title: </label></h3><hr>
+			
+			{% for Product in posts %}<br><br><br><br><br>
+			
+			<h4 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}">{{ Product.title }}</a></h4><hr>
+			{% endfor %}
+			</div>
+			<div class="col-md-4">
+			<h3><label> CreatedOn: </label></h3><hr>
+			{% for Product in posts %}<br><br><br><br><br>
+            <h4 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}"> {{ Product.date_created }}</a> </h4>
+			<hr>
+{% endfor %}</div>
+ <div class="col-md-3">
+			<h3><label> Edit Product: </label></h3><hr>
+			{% for Product in posts %}<br><br><br><br>
+            <h6 style="margin-top:-65px"><a href="{% url 'post_edit_list' pk=Product.pk %}"> <button type="submit" class="btn btn-info btn-lg"  >Edit Product</button></a></h6><hr>
+			
+            {% endfor %}
+			</div>
+            </div>
+			</div>
+			
+		            </div>
+			</div>
+			
+    
+{% endblock content %}

@@ -3,8 +3,10 @@
 {% load url from future %}
 
 {% block content %} 
-<h1><b>{% trans "Sent Messages" %}<b></h1>
-<hr/>
+<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1><b>{% trans "Sent Message" %}<b></h1><br><br><br><hr/>
+<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
+
 
 {% if message_list %}
 
@@ -31,6 +33,6 @@
     
 {% else %}
 <div>
-<p><b>{% trans "No messages." %}<b></p></div>
+<p><h1>{% trans "There is no messages in Your SentBox.."  %}</h1></p></div></div>
 {% endif %}   
 {% endblock %}

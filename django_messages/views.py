@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.translation import ugettext as _
 from django.utils import timezone
 from django.core.urlresolvers import reverse
+from dashboard.forms import DocumentForm
+from dashboard.models import Document
 from django.conf import settings
 
 from django_messages.models import Message
@@ -26,9 +28,22 @@ def inbox(request, template_name='django_messages/inbox.html'):
     Optional Arguments:
         ``template_name``: name of the template to use.
     """
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES )
+        if form.is_valid():
+            newdoc = Document(user=request.user, docfile = request.FILES['docfile'])
+            newdoc.save()
+
+            # Redirect to the document list after POST
+
+    else:
+        form = DocumentForm()
+   
+   # Load documents for the list page
+    document = Document.objects.filter(user_id = request.user.id)[:1]
     message_list = Message.objects.inbox_for(request.user)
-    return render_to_response(template_name, {
-        'message_list': message_list,
+    return render_to_response('django_messages/inbox.html', {
+        'message_list': message_list, 'document': document, 'form': form
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -38,9 +53,23 @@ def outbox(request, template_name='django_messages/outbox.html'):
     Optional arguments:
         ``template_name``: name of the template to use.
     """
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES )
+        if form.is_valid():
+            newdoc = Document(user=request.user, docfile = request.FILES['docfile'])
+            newdoc.save()
+
+            # Redirect to the document list after POST
+
+    else:
+        form = DocumentForm()
+   
+   # Load documents for the list page
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+
     message_list = Message.objects.outbox_for(request.user)
-    return render_to_response(template_name, {
-        'message_list': message_list,
+    return render_to_response('django_messages/outbox.html', {
+        'message_list': message_list, 'document': document, 'form': form
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -52,9 +81,23 @@ def trash(request, template_name='django_messages/trash.html'):
     Hint: A Cron-Job could periodicly clean up old messages, which are deleted
     by sender and recipient.
     """
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES )
+        if form.is_valid():
+            newdoc = Document(user=request.user, docfile = request.FILES['docfile'])
+            newdoc.save()
+
+            # Redirect to the document list after POST
+
+    else:
+        form = DocumentForm()
+   
+   # Load documents for the list page
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+
     message_list = Message.objects.trash_for(request.user)
-    return render_to_response(template_name, {
-        'message_list': message_list,
+    return render_to_response('django_messages/trash.html', {
+        'message_list': message_list, 'document': document, 'form': form
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -84,11 +127,12 @@ def compose(request, recipient=None, form_class=ComposeForm,
             return HttpResponseRedirect(success_url)
     else:
         form = form_class()
+        document = Document.objects.filter(user_id = request.user.id)[:1]
         if recipient is not None:
             recipients = [u for u in User.objects.filter(**{'%s__in' % get_username_field(): [r.strip() for r in recipient.split('+')]})]
             form.fields['recipient'].initial = recipients
-    return render_to_response(template_name, {
-        'form': form,
+    return render_to_response('django_messages/compose.html', {
+        'form': form, 'document': document,
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -123,8 +167,9 @@ def reply(request, message_id, form_class=ComposeForm,
             'subject': subject_template % {'subject': parent.subject},
             'recipient': [parent.sender,]
             })
-    return render_to_response(template_name, {
-        'form': form,
+        document = Document.objects.filter(user_id = request.user.id)[:1]
+    return render_to_response('django_messages/compose.html', {
+        'form': form, 'document': document,
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -214,8 +259,8 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
     if message.read_at is None and message.recipient == user:
         message.read_at = now
         message.save()
-
-    context = {'message': message, 'reply_form': None}
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    context = {'message': message, 'reply_form': None, 'document': document}
     if message.recipient == user:
         form = form_class(initial={
             'body': quote_helper(message.sender, message.body),

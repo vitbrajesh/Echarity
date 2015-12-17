@@ -1,0 +1,49 @@
+{% extends "dashboard.html" %}
+{% block content %}
+<!DOCTYPE html>
+
+
+
+        <body>
+                <!-- List of uploaded documents -->
+             
+                  {% load staticfiles %}
+ {% for document in document %}
+                                <li>
+                  {{  document.firstname }}           <img src="{{ document.docfile.url }}" alt="{{ document.docfile.name }}">
+                                </li>
+                        {% endfor %}
+              
+
+                <!-- Upload form. Note enctype attribute! -->
+                <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <p>{{ form.non_field_errors }}</p>
+                        <p>{{ form.user.label_tag }}</p>
+                          {{ form.user }}
+                        <p>{{ form.docfile.label_tag }} </p>
+                        <p>
+                                {{ form.docfile.errors }}
+                                {{ form.docfile }}
+                        </p>
+                            
+                        <p>{{ form.firstname.label_tag }}</p>
+                           
+                           {{form.firstname}} 
+                       
+
+                        <p>{{ form.lastname.label_tag }}</p>
+                           
+                           {{form.lastname}} 
+
+                        <p>{{ form.address.label_tag }}</p>
+                           
+                           {{form.address}} 
+
+                        <p><input type="submit" value="save" /></p>
+                </form>
+
+        </body>
+
+</html>
+{% endblock %}

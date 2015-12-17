@@ -4,7 +4,11 @@ from django.db.models.signals import post_save
 from django.utils.text import slugify
 from django.utils import timezone
 # Create your models here.
-
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
+import datetime
+from datetime import datetime
+# Create your models here.
 
 class ProductManager (models.Manager):
     def get_queryset(self):
@@ -13,8 +17,13 @@ class ProductManager (models.Manager):
     def all(self, *args, **kwargs):
         return self.get_queryset().active()
 
+class Document(models.Model):
+    title  = models.CharField(max_length=120)
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+    #description = models.Textarea()
 
-class Product(models.Model):
+
+class Product1(models.Model):
     title  = models.CharField(max_length=120)
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(decimal_places=2, max_digits=10)
@@ -31,6 +40,41 @@ class Product(models.Model):
         return (self.title)
     def get_absolute_url(self):
         return reverse("product_detail", kwargs = {"pk": self.pk})
+
+
+def upload_to(instance, filename):
+    return '/'.join(['products', unicode(instance.pk), filename])
+
+
+class Product(models.Model):
+    user = models.ForeignKey(User)
+    title  = models.CharField(max_length=120)
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+    #description = models.CharField(max_length=120)
+    description = models.CharField(default=False, max_length=160)
+    active = models.BooleanField(default=True)
+    objects = ProductManager()
+    #image = models.ImageField(_("ProductImage"), upload_to=upload_to)
+    quantity = models.IntegerField(default=0)
+    zip_Code = models.CharField(blank = True, max_length=6)
+    address = models.CharField(default=False, max_length=60)
+    date_created = models.DateTimeField(default=timezone.now)
+    date_Update = models.DateTimeField(default=timezone.now)
+    expire_date = models.DateTimeField(blank=True, null=True)
+    #expire_date = models.DateTimeField(widget=DateTimeWidget(usel10n=True, bootstrap_version=3))
+    #user = models.ForeignKey(User)
+    #title = models.ForeignKey(Product)
+    
+    class Meta:
+        verbose_name = _("Product")
+        verbose_name_plural = _("products")
+        ordering = ("docfile",)
+
+    def __unicode__(self):
+        return self.docfile.path
+
+
+
 
 
 
@@ -74,8 +118,6 @@ class ProductQuerySet(models.query.QuerySet):
 
 
 
-
-
 #Image rename function
 def image_upload_to(instance, filename):
     title = instance.product.title
@@ -86,13 +128,13 @@ def image_upload_to(instance, filename):
     return "product/%s/%s" %(slug, new_filename)
 
 #product Image
-class ProductImage(models.Model):
-    product = models.ForeignKey(Product)
-    image = models.ImageField(upload_to=image_upload_to)
+#class ProductImage(models.Model):
+   # product = models.ForeignKey(Product)
+    #image = models.ImageField(upload_to=image_upload_to)
     
 
-    def get_absolute_url(self):
-        return self.product.title()
+    #def get_absolute_url(self):
+      #  return self.product.title()
 
 class Slider(models.Model):
 	image = models.ImageField(upload_to=image_upload_to)

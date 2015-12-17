@@ -3,6 +3,7 @@
 {% load url from future %}
 
 {% block content %}
+<div class="container"class="responsive" style="height:900px; width: auto; background-color: Lavender">
 <h1>{% trans "View Message" %}</h1>
 <dl class="message-headers">
     <dt>{% trans "Subject" %}</dt>
@@ -30,7 +31,7 @@
 {{ reply_form.as_table }}
 </table>
 <input type="submit" value="{% trans "Send" %} &raquo;"/>
-</form>
+</form></div>
 {% endif %}
 {% endcomment %}
 {% endblock %}

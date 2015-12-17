@@ -1558,7 +1558,7 @@ GMaps.prototype.toImage = function(options) {
 GMaps.staticMapURL = function(options){
   var parameters = [],
       data,
-      static_root = 'https://www.google.co.in/maps/@26.3552396,80.3503202,10.25z?hl=en';
+      static_root = 'http://maps.googleapis.com/maps/api/staticmap';
 
   if (options.url) {
     static_root = options.url;

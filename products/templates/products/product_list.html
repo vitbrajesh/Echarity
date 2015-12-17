@@ -79,18 +79,19 @@ Products Echarity
 		<div class='col-md-4'>
 			<div class="thumbnail">
 <a href='/products/{{ object.pk }}/'> <h1>{{ object.title }}</h1></a>
-	{% if object.productimage_set.count > 0 %}
-      	{% for img in object.productimage_set.all %}
-	<a href='/products/{{ object.pk }}/'><img class = 'img-responsive' src="{{ img.image.url }}" /></a>
-
-							<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
-{% endfor %}
-{% else %}
-<a href='/products/{{ object.pk }}/'><img id="blah" src="{% static 'img/snap/0noitem.gif' %}"   width="190px" height="150px" alt="No Image of item"/>
-                    <img /></a>
-{% endif %}
+	{% if object %}
+                        <ul>
+                        
+                                
+                                <img src="{{ object.docfile.url }}" width="190px" height="150px" alt="{{ object.docfile.name }}">
+                                </a></li>
+                        
+                        </ul>
+                {% else %}
+                        <p><img id="blah" src="{% static 'img/snap/0noitem.gif' %}"   width="190px" height="150px" alt="No Image of item"/></p>
+                {% endif %}
 <div class="caption">
-<p><u>{{ object.description|truncatewords:15}}</u></p>
+<p><u>{{ object.address|truncatewords:15}}</u></p>
 <p><a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/products/{{ object.pk }}/" class="btn btn-success" role="button">MORE ITEMS</a></p></div>
 		   	 </div>

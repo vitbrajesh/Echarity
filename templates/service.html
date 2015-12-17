@@ -3,7 +3,7 @@
 {% load staticfiles %} 
 <body>
     <div class="wrapper"style="background-color:Lavender">
-<img src='{% static "img/snap/00ser.jpg" %}'
+<img src='{% static "img/snap/00ser.jpg" %} class="img-responsive inline"'
 
     <section id="company-information" class="choose">
         <div class="container">
@@ -27,7 +27,7 @@
     </section>
     <!--/#company-information-->
 
-    <section id="services">
+    <section id="services" class="responsive inline">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -79,7 +79,7 @@
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <img src="{% static 'fotter/images/services/happy5.jpeg' %}" alt="">
+                            <img src="{% static 'fotter/images/services/happy5.jpeg' %}" class="img-responsive" alt="">
                         </div>
                         <h2>Hand-Sharing</h2>
                         <p>We identify innovative and best practices in capacity building and share available skills, strategies and tools with the NGO & Charitable community..</p>
@@ -257,7 +257,7 @@
     </section>
     <!--/#recent-projects-->
 
-    <section id="clients">
+    <section id="clients" class="responsive">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

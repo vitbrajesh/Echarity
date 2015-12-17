@@ -20,11 +20,13 @@ urlpatterns = [
     url(r'^gallery/$', 'ecommerce2.views.gallery', name='gallery'),
  # Dashboard:
     url(r'^dashboard/$', 'dashboard.views.dashboard', name='dashboard'),   
-    url(r'^profile/$', 'dashboard.views.profiles', name='profiles'),
+    url(r'^profiles/$', 'dashboard.views.profiles', name='profiles'),
     #url(r'^dashboard/', include(router.urls)),
  # Product:
     url(r'^$', 'products.views.home', name='home'),
     url(r'^products/', include('products.urls')),
+    url(r'^history/$', 'products.views.post_history', name='post_history'),
+    url(r'^history/add/(?P<pk>[0-9]+)/$', 'products.views.post_detail_history', name='post_detail_history'),
  # Admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),
@@ -32,6 +34,7 @@ urlpatterns = [
     # Django JET URLS
     url(r'^jet/', include('jet.urls', 'jet')), 
     url(r'^tour/$', 'ecommerce2.views.tour', name='tour'),
+    url(r'^dashboard/', include('dashboard.urls')),
    
 ]
 

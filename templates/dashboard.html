@@ -76,13 +76,26 @@ background:#00CC99;
 
 {% include "products/header.html" %}
 </div>
-<div id="wrapper">
-   <nav class="navbar-default navbar-side" role="navigation">
+<div id="wrapper" class="responsive" style="background-color:DarkCyan">
+   <nav class="navbar-default navbar-side" role="navigation" style="background-color:DarkCyan">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-    {% load staticfiles %}
-                    <img src="{{ user.userprofile.get_avatar }}"  class="img-circle"  width="170px" height="160px" alt="your selected item"/>
+                     {% load staticfiles %}
+ 
+                        
+                        
+             {% if document %}
+                                
+ {% for document in document %}
+                                <img src="{{ document.docfile.url }}" class="img-circle"  width="160px" height="150px" alt="{% static 'assets/img/find_user.png' %}"/>
+                      {% endfor %}
+          
+                        {% else %}
+                       <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle"  width="160px" height="150px" alt="your selected item"/>
+								
+                {% endif %}
+                                           
 	</li>	
  <li><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.first_name}}&nbsp;{{ request.user.last_name}}</b>
                    </li>			
@@ -90,38 +103,39 @@ background:#00CC99;
                      <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>
                     </li>			
                     <li>
-                        <a href="{% url 'post_new' %} "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
+                        <a href="/products/list/ "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
                        <li  >
-                       <a href="{% url 'dashboard' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
+                       <a href="{% url 'post_history' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
                     </li>	
                       <li>
                         <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
                     </li>	
                       <li>
-			<a href="{% url 'profile' %} "><i class="fa fa-square-o fa-3x"></i>IMAGE</a>
+			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>EDIT PROFILE</a>
                     </li>
                   <li>
-                        <a href="{% url 'dashboard' %} "><i class="fa fa-square fa-3x"></i> DASHBOARD</a>
+                        <a href="{% url 'dashboard' %} "><i class="fa fa-square fa-3x"></i> GREETING</a>
                     </li>	
                 </ul>
                
             </div> 
             
         </nav>  
+
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" style="background-color:LightSkyBlue">
-            <div id="page-inner" >
-                <div class="row">
-                    <div class="col-md-12">
+            <div id="page-inner" style="background-color:LightSkyBlue">
+                <div class="row" >
+                    <div class="col-md-12" style="background-color:LightSkyBlue">
                      <h1>Dashboard</h1>   
                         <h3>Welcome  <u><b>{{ request.user.username }}</b></u> to see you back. </h3>
                     </div>
                  </div>            
                  <!-- /. ROW  -->
-                  <hr />
-                <div class="row" >
-                <div class="col-md-3 col-sm-6 col-xs-6">           
+                  
+                <div class="row"style="background-color:LightSkyBlue" >
+                <div class="col-md-3 col-sm-6 col-xs-6"style="background-color:LightSkyBlue">           
 		<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
                  <i class="fa fa-envelope-o"></i>

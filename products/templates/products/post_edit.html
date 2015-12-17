@@ -1,10 +1,64 @@
 {% extends "dashboard.html"%}
 {% block content %}
-    <h1>New Item</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-       
-		{{ form.as_p }}
+ {% load staticfiles %}
+<link href="{% static 'brajesh/css/datetimepicker.css' %}" rel="stylesheet" />
+<script src="{% static 'brajesh/js/bootstrap-datetimepicker.js' %}"></script>   
+    
 		
-        <button type="submit" class="save btn btn-default">Save</button>
+	<div style="color:black">	
+    <h4 style="color:black; padding-left:280px"><b><u>New Item Information-</u></b></h4><br>
+	
+    <form method="POST" class="post-form">{% csrf_token %}
+	<div class="margin" style="margin-left:250px">
+
+<div class="row">        
+      <div class="col-md-3"> <label for="username" class="error">Title:</label></div>
+       <div class="col-md-3"> <label>{{ form.title }}</label></div>
+</div>
+<br>
+<div class="row"> 
+        
+       <div class="col-md-3"> <label for="username" class="error">Description:</label></div>
+       <div class="col-md-3"> <label>{{ form.description }}</label></div>
+</div>
+<br>
+<div class="row"> 
+        
+       <div class="col-md-3"> <label for="username" class="error">Active:</label></div>
+       <div class="col-md-3"> <label>{{ form.active }}</label></div>
+</div>  
+<br> 
+<div class="row"> 
+        
+        <div class="col-md-3"><label for="username" class="error">Quantity:</label></div>
+        <div class="col-md-3"><label>{{ form.quantity }}</label></div>
+</div>	
+<br>	
+<div class="row"> 
+
+        
+       <div class="col-md-3"> <label for="username" class="error">Address:</label></div>
+       <div class="col-md-3"> <label>{{ form.address }}</label></div>
+</div>
+<br>
+<div class="row"> 
+        
+        <div class="col-md-3"><label for="username" class="error">Zip_Code:</label></div>
+        <div class="col-md-3"><label>{{ form.zip_Code }}</label></div>
+
+</div>
+<br>
+<div class="row">   
+	    <div class="col-md-3"><label for="username" class="error">Expire_date:</label></div>
+        <div class="col-md-6">{{ form.expire_date }}</div>      
+        
+</div>
+		<br>
+        <button type="submit" class="save btn btn-success" style="height:30px ; width:90px; margin-left: 80px" >Save</button>
+		
+		</div>
     </form>
+	</div>
 {% endblock %}
+		
+    

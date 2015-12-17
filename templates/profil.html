@@ -1,29 +1,48 @@
-{% extends "dash.html" %} 
+{% extends "dashboard.html" %} 
    {% block content %}
-<div class="container_12">
+<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+
   <div class="grid_12">
-  <b> <h1> User Profile</h1>
+  <b> <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your Profile</h1>
 	<div id="privacy-text">
-          User Profile personalizes your web experience.  You can control how much of your Demographics &amp; Interests you reveal online (from <b>Coarse</b> to <b>Fine</b>).  The more you reveal, the more personalized your experience will be.  Firefox estimates this information based on your browsing behavior.<br/><br/>
-          You are always in control of the information you reveal.  You can adjust your preferences at any time because Mozilla <em>requires</em> websites <strong>not</strong> to track this information of you.
+      <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>  User Profile   personalizes your web experience.</strong></h4>
+<br>	</div><br>
 	</div>
-	</div>
-<div class="container">
-  <div class="col-md-3"></div>
-   <div class="col-md-9">
-<div>
-YOUR FIRST NAME:{{request.user.first_name}}</div><br>
-<div>
- YOUR LAST NAME: {{ request.user.last_name}}</div><br>
-<div>
-YOUR EMAIL: {{ request.user.email}}</div><br>
-  
-<div>YOUR LAST LOGIN ON:{{ request.user.last_login}}</div> <br>
-<div>YOUR ACCOUTN ACTIVATE ON:{{ request.user.date_joined}}</div>       
- </div></div>
-</div>
+ {% load staticfiles %}
+ {% for document in document %}
+<div class="container" style="height: 770px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
+<br>
+<h2>YOU CAN VIEW YOUR INFORMATIONS</h2><br><br><br>
+  <div class="row"><div class="col-md-2"></div>
+  <div class="col-md-4">
+<label style="color: MidnightBlue" class="responsive" >Your First Name:</label></div>
+    <div class="col-md-7" name="lastname"  style="width:300px; height:30px; background-color:LightCyan">{{  document.firstname }}</div></div><br>
+<div class="row"><div class="col-md-2"></div>
+<div class="col-md-4">
+ <label style="color: MidnightBlue">Your Last Name:</label></div>
+    <div class="col-md-8" name="lastname"  style="width:300px; height:30px; background-color:LightCyan">{{ document.lastname}}</div></div><br>
+<div class="row"><div class="col-md-2"></div>
+<div class="col-md-4">
+ <label style="color: MidnightBlue">Address:</label></div>
+    <div class="col-md-8" name="lastname"  style="width:300px; height:30px; background-color:LightCyan">{{ document.address}}</div></div><br>
+<div class="row"><div class="col-md-2"></div>
 
-
+<div class="col-md-4">
+ <label style="color: MidnightBlue">Your Email:</label></div>
+    <div class="col-md-8" name="mail"  style="width:300px; height:30px; background-color:LightCyan">{{ request.user.email}}</div></div><br>
+<div class="row"><div class="col-md-2"></div>
+<div class="col-md-4">
+  <label style="color: MidnightBlue">Last login:</label></div>
+    <div class="col-md-8" name="login"  style="width:300px; height:30px; background-color:LightCyan">{{ request.user.last_login}}</div></div> <br>
+<div class="row"><div class="col-md-2"></div>
+<div class="col-md-4">
+ <label style="color: MidnightBlue">A/C Activation Date:</label></div>
+    <div class="col-md-8" name="account_no"  style="width:300px; height:30px; background-color:LightCyan">{{ request.user.date_joined}}</div>  <br><br>	<br><br>     
+ </div></div></div>
+  {% endfor %}
 
 
 

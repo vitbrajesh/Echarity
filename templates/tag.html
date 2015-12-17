@@ -1,24 +1,105 @@
-{% extends "dashboard.html" %}        
+{% extends "welcome.html" %}        
 {% block content %}
-<div class="container_12" style="background:pink;">
-  <div class="grid_12">
-  <b> <h1> User Profile</h1>
-	<div id="privacy-text">
-          User Profile personalizes your web experience.  You can control how much of your Demographics &amp; Interests you reveal online (from <b>Coarse</b> to <b>Fine</b>).  The more you reveal, the more personalized your experience will be.  Firefox estimates this information based on your browsing behavior.<br/><br/>
-          You are always in control of the information you reveal.  You can adjust your preferences at any time because Mozilla <em>requires</em> websites <strong>not</strong> to track this information of you.
-	</div>
-	</div></div>
-<br>
-<hr>
-       <div style="background:orange;">
-      <h4 style="color:green;margin-left:30px;">REQUEST ID>-..........</h4>
-                     <div class="row">
-                          <div class="col-md-1"><img id="blah" src="assets/img/find_user.png" class="img-circle"  width="auto" height="100px" alt="your selected item"/></div>
-  <div class="col-md-8"><div class="col-md-12"> <h1 style="color:blue; background:yellow">Please me know the image of your sending things</h1></div><p class='lead text-align-center'>{{ title }}</p>
+{% load staticfiles %}
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
 
-                         </div>
-                      <div class="row">
-                          <div class="col-md-8"><h1 style="color:blue; margin-left:40px;background:yellow">I have already posted the image there please see.</h1></div>
-  <div class="col-md-4"><img id="blah" src="assets/img/find_user.png" class="img-circle"  width="160px" height="100px" alt="your selected item"/></div>
-                </div></div>
+    <!-- Custom CSS -->
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+   
+    <div class="intro-header">
+  <h1 >Welcome <b>{{ request.user.username }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </b> </h1><br>
+                       
+                     
+                   
+        <div class="container">
+  
+            <div class="row"> <div class="col-lg-2"></div>
+                <div class="col-lg-10">
+                   <h3>INSTANT MESSAGING </h3><br><br>
+<div class="row" >
+                <div class="col-md-3 col-sm-6 col-xs-6">           
+		<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
+                 <i class="fa fa-envelope-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_inbox' %}"><p class="text-muted">INBOX</p></a>
+                </div> 
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-green set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-external-link"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_outbox' %}"><p class="text-muted">OUTBOX</p></a>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-pencil-square-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_compose' %}"><p class="text-muted">TEXT</p></a>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 20px">
+                    <i class="fa fa-trash-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"></p>
+                    <a href="{% url 'messages_trash' %}"><p class="text-muted">TRASH</p></a>
+                </div>
+             </div>
+		     </div></div>
+			<hr>
+<h1>EXPLORE YOUR DASHBOARD </h1>
+                        <h3>Operations on Your Profile </h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="{% url 'list' %}" class="btn btn-default btn-lg"><i class="fa fa-book fa-spin"></i> <span class="network-name">Donation</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'post_history' %}" class="btn btn-default btn-lg"><i class="fa fa-cog fa-spin"></i> <span class="network-name">Account Details</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'profiles' %}" class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i> <span class="network-name">Personal</span></a>
+                            </li>
+                        </ul>
+                    </div>
+ 
+		     </div>
+                       
+        </div>
+        <!-- /.container -->
+
+    </div>
+
 {% endblock %}  

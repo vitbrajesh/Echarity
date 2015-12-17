@@ -3,7 +3,7 @@ from .models import SignUp
  #from registration.forms import RegistrationForm
 from django import forms
 from products.models import Product
-from products.models import Product, ProductImage
+
  
 class ContactForm(forms.Form):
 	full_name = forms.CharField(required=False)
