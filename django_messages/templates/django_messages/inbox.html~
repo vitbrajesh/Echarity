@@ -28,7 +28,7 @@
 <div class="col-md-3"><a href="{{message.get_absolute_url }}">{{ message.subject }}</a></div>
             {% if message.replied %}{% endif %}
             {% if message.new %}{% endif %}
-<div class="col-md-4"><a href="{{ message.get_absolute_url }}">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</a></div>
+<div class="col-md-4">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</div>
 <div class="col-md-2"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></div>
     </div>
 {% endfor %}

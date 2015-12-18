@@ -48,9 +48,8 @@
        {{post.expire_date}}<br> 
         <h3 style="color:brown;"><lable>Last Update:</lable></h3>
        {{post.date_Update}}
-<br><br><br>
  
-      Edit: <a class="btn btn-default" href="{% url 'post_edit_list' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+       
     </div>
 	<div class="row">
 	<div class="col-sm-9">
@@ -59,7 +58,7 @@
 		</div>
       </div> 
     </div>
- 
+ Edit: <a class="btn btn-default" href="{% url 'post_edit_list' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 </div>
 </div>
 {% endblock %}

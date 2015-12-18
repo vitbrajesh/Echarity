@@ -2,7 +2,7 @@
 
 {% block content %}
    <div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"PAST DEATILS OF YOUR DONATION"<b></center></h2><br><br><hr/>
+<h2 style="color:white"><center><b>"PAST DETAILS OF YOUR DONATION"<b></center></h2><br><br><hr/>
 <div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
     <u><h3 style="color:DarkCyan">Edit OR View Your Past Action with US.</h3></u><br>
 	    <div class="row">
