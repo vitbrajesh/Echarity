@@ -4,7 +4,7 @@
 {% block content %}
 {% load static %}
 {% if request.user.is_authenticated %}
-<div class="container">
+<div class="container-fluid">
 <div class="jumbotron"><img src='{% static "img/snap/1log.png" %}'
 	</div></div>
 		
@@ -12,11 +12,11 @@
 <p> FOR FRESHES REGISTRTION LOGOUT FIRST<p><a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
 </div></div>
 {% else %}
-<div class="container">
+<div class="container-fluid">
 <div class="jumbotron"><img src='{% static "img/snap/1ragi.jpg" %}'
 	</div>
 		</div>
-<div class="container">
+<div class="container-fluid">
 <div class='row'>
 <div class="col-md-1"></div>
 <div class="col-md-4">

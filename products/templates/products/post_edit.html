@@ -5,10 +5,10 @@
 <link href="{% static 'brajesh/css/datetimepicker.css' %}" rel="stylesheet" />
 <script src="{% static 'brajesh/js/bootstrap-datetimepicker.js' %}"></script>   
     
-		
-	<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+	<body>	
+	<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
 <h2 style="color:white"><center><b>"EDIT OF YOUR DONATION ITEMS"<b></center></h2><br><br><hr/>
-<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
+<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
 <u><h3>Chnage will permanatly store on Donating Things</h3></u><br>
     	
     <form method="POST" class="post-form">{% csrf_token %}
@@ -21,6 +21,7 @@
 		</div>
     </form>
 	</div></div>
+</body>
 {% endblock %}
 		
     

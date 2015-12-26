@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse
 from dashboard.forms import DocumentForm
 from dashboard.models import Document
 from django.conf import settings
-
+from products.models import ProductManager, Product
 from django_messages.models import Message
 from django_messages.forms import ComposeForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
@@ -270,3 +270,39 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
         context['reply_form'] = form
     return render_to_response(template_name, context,
         context_instance=RequestContext(request))
+
+@login_required
+def enquiry(request, recipient=None, form_class=ComposeForm,
+        template_name='products/products', success_url=None, recipient_filter=None):
+    """
+    Displays and handles the ``form_class`` form to compose new messages.
+    Required Arguments: None
+    Optional Arguments:
+        ``recipient``: username of a `django.contrib.auth` User, who should
+                       receive the message, optionally multiple usernames
+                       could be separated by a '+'
+        ``form_class``: the form-class to use
+        ``template_name``: the template to use
+        ``success_url``: where to redirect after successfull submission
+    """
+    document = Product.objects.all()
+    if request.method == "POST":
+        sender = request.user
+        form = form_class(request.POST, recipient_filter=recipient_filter)
+        if form.is_valid():
+            form.save(sender=request.user)
+            messages.info(request, _(u"Message successfully sent."))
+            if success_url is None:
+                success_url = reverse('products')
+            if 'next' in request.GET:
+                success_url = request.GET['next']
+            return HttpResponseRedirect(success_url)
+    else:
+        form = form_class()
+        if recipient is not None:
+            recipients = [u for u in User.objects.filter(**{'%s__in' % get_username_field(): [r.strip() for r in recipient.split('+')]})]
+            form.fields['recipient'].initial = recipients
+    return render_to_response('products/products.html', {
+        'form': form, 'document': document,
+    }, context_instance=RequestContext(request))
+

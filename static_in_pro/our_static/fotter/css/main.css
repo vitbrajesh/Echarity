@@ -13,7 +13,7 @@
 
   body {
     background: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: Oswald;
     font-weight: 300;
     font-size: 14px;
     line-height: 22px;
@@ -25,10 +25,7 @@
   }
 
 
-  a{
-    color:#C03035;
-  }
-
+ 
   a:hover {
     outline: none;
     text-decoration:none;
@@ -53,7 +50,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
+    font-family: Oswald;
     font-weight: 300;
   }
 

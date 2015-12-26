@@ -1,7 +1,7 @@
 {% load staticfiles %}
-<html xmlns="http://www.w3.org/1999/xhtml">
+<container-fluid xmlns="http://www.w3.org/1999/xcontainer-fluid">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/container-fluid; charset=utf-8" />
 <title>{% block head_title %}MY APP{% endblock %}</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -51,7 +51,7 @@ background:#00CC99;
 <body>
  <div class="page-header">
 <a href="#" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-{% include "products/header.html" %}
+{% include "products/header.container-fluid" %}
 <div id="myBODY"> 
            
             <div class="mtb">
@@ -63,7 +63,7 @@ background:#00CC99;
    {% block content %}
             {% endblock %}
 <br >
-{% include "products/footer.html" %}
+{% include "products/footer1.container-fluid" %}
 <div id="footer"></div> 
 </body>
-</html>
+</container-fluid>

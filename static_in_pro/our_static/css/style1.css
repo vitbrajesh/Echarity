@@ -1,0 +1,107 @@
+<!---------------------------------home----------------------------------->
+body,p{
+font-family: oswald;
+}
+#myBODY1 {
+   background: Lavender ;
+    background-size:100%;
+    weight:120px;
+	font-family: oswald;
+}
+
+    .mtb
+    {
+        padding-top: 23%;
+        padding-left:16%;}
+
+ .navbar-collapse
+ {
+        padding-top: 1%;
+        padding-left: auto;}
+
+#div1{
+padding-top:7px;
+
+}
+
+.img-circle{
+ height:100px;
+width:100px;
+}
+#p1{
+float: right; 
+padding-bottom:100px; 
+font-family: oswald;
+}
+#text1{
+color:Black;
+ font-family: oswald;
+
+}
+
+#text2{
+color:Black;
+ font-family: oswald light;
+
+}
+
+
+
+<!---------------------------about----------------------------------------->
+
+
+<!--------------------------------gallery----------------------------------->
+#main{
+
+ width:100%;
+}
+#main1{
+font-family: oswald;
+}
+#myCarousel{
+height:200px;
+ width:910px;
+ padding-left:10px;
+}
+#carousel1{
+width: 900px; padding-right:10px;
+}
+#myCarousel1{
+height:200px;
+ width:910px;
+ padding-left:10px;
+}
+#myCarousel2{
+height:200px;
+ width:910px;
+ padding-left:10px;
+}
+#cor1{
+float:right;
+ padding-right:-70px;
+ width:9px;
+ height:0px;
+ margin-top:77px; 
+}
+
+#cor2{
+float:right;
+ margin-right: -7px;
+ width:2px; height:0px;
+ margin-top:77px;
+
+} 
+.img{
+height: 153px;
+ width:153px;
+}
+<!----------------------------------------------dash-------------------------------->
+#circle{
+width:160px;
+ height:150px;
+}
+
+<!--------------------------------------------faq---------------------------------->
+
+
+

@@ -3,6 +3,9 @@
 Primary style
 
 -------------------------------- */
+
+
+
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,7 +18,7 @@ Primary style
 
 body {
   font-size: 100%;
-  font-family: "Oswald Light;"
+  font-family: "Open Sans", sans-serif;
   color: #4e5359;
   background-color: #f3f3f5;
 }

@@ -42,36 +42,6 @@
     <script src="{% static 'assets/js/custom.js' %}"></script>
  
 
-<style>
-body {
-    font-family: Oswald Light;
-    background:#00CC99;
-}
-.navbar-default{
-background:white;
-}
-.modal-footer{
-background:#00CC99;
-}
-
-#myBODY {
-   background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;
-    background-size:100%;
-   min-height: 530px;
-    weight:120px;
-    padding-top: auto;
-    background-repeat: no-repeat;}
-
-    .mtb
-    {
-        padding-top: 15%;
-        padding-left: 20%;
-}
-   .navbar-collapse
- {
-        padding-top: 1%;
-        padding-left: auto;}
-</style>
 </head>
 <body>
 
@@ -89,16 +59,16 @@ background:#00CC99;
              {% if document %}
                                 
  {% for document in document %}
-                                <img src="{{ document.docfile.url }}" class="img-circle"  width="160px" height="150px" alt="{% static 'assets/img/find_user.png' %}"/>
+                                <img src="{{ document.docfile.url }}" class="img-circle" id="circle"   alt="{% static 'assets/img/find_user.png' %}"/>
                       {% endfor %}
           
                         {% else %}
-                       <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle"  width="160px" height="150px" alt="your selected item"/>
+                       <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"  alt="your selected item"/>
 								
                 {% endif %}
                                            
 	</li>	
- <li><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.first_name}}&nbsp;{{ request.user.last_name}}</b>
+<li><b><center> {{document.firstname}}&nbsp;{{ document.lastname}}</center></b>
                    </li>				
 			 <li>
                      <a href="{% url 'messages_inbox' %} "><i class="fa fa-qrcode fa-3x"></i> MESSAGE</a>

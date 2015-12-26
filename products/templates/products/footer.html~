@@ -1,89 +1,15 @@
 {% load staticfiles %}
-<link href="{% static 'fotter/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'fotter/css/lightbox.css' %}" rel="stylesheet"> 
-    <link href="{% static 'fotter/css/animate.min.css' %}" rel="stylesheet"> 
-	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
-	<link href="{% static 'fotter/css/responsive.css' %}" rel="stylesheet">    
-    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'fotter/images/ico/apple-touch-icon-144-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'fotter/images/ico/apple-touch-icon-114-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'fotter/images/ico/apple-touch-icon-72-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" href="{% static 'fotter/images/ico/apple-touch-icon-57-precomposed.png' %}">
-</head><!--/head-->
-<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
-<link href="{% static 'css/bootstrap.min.css'  %}" type="text/css" />
-<link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
-<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
-	<!-- BOOTSTRAP STYLES-->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
- <br><br>
-<footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 text-center bottom-separator">
-                    <img src="{% static 'fotter/images/home/under.png' %}" class="img-responsive inline" alt="">
-                </div>
-                <div class="col-md-7">
-                    <div class="testimonial bottom">
-                        <h2>Testimonial</h2>
-                        <div class="media">
-                            <div class="pull-left">
-                               <img src="{% static 'img/snap/index.jpeg' %}"class="img-circle" height="100px" width="100px">
-                            </div>
-                            <div class="media-body">
-                                <blockquote>If you can't feed a hundred people, then feed just one..</blockquote>
-                                <h3><a href="#">-Mother Teresa</a></h3>
-                            </div>
-                         </div><br><br>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="{% static 'img/snap/index2.jpeg' %}"class="img-circle" height="100px" width="100px">
-                            </div>
-                            <div class="media-body">
-                                <blockquote>Give the ones you love wings to fly, roots to come back and reasons to stay..</blockquote>
-                                <h3><a href="">- Dalai Lama</a></h3>
-                            </div>
-                        </div>   
-                    </div> 
-                </div>
-                <div class="col-md-3">
-                    <div class="contact-info bottom">
-                        <h2>Contacts</h2>
-                        <address>
-                        E-mail: <a href="mailto:vinaykumar.vk2007@gmail.com">email@vulcaninfotech.com</a> <br> 
-                        Phone: +91 (512) XXXXXXX <br> 
-                        Fax: +91 (512) XXXXXXX <br> 
-                        </address>
 
-                        <h2>Address</h2>
-                        <address>
-                        Govind Nagar, <br> 
-                        Baradevi Road, <br> 
-                        Kanpur, U.P. <br> 
-                        India <br> 
-                        </address>
-                    </div>
-                </div>
-                
-                <div class="col-sm-12">
-                    <div class="copyright-text text-center">
-                        <p>&copy;VIT Pvt.Limted Company 2015. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.vulcaninfotech.com">VULCAN</a></p>
-                    </div>
-                </div>
-               </footer>
-<div class="navbar-default navbar-bottom" role="navigation" style="background: #E0E0E0";>
-<div class="container" style="height:80px; padding-left:auto; padding-right:1px">
+    <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
+     
+    <link href="{% static 'fotter/css/animate.min.css' %}" rel="stylesheet"> 
+
+
+<div class="navbar-default navbar-bottom" role="navigation" style="background-color: #383838">
+<div class="container-fluid" style="height:255px">
 <div class="navbar-footer">
-<ul class="nav navbar-nav navbar-center"  style=" padding-left:150px; padding-bottom:12px; height:10px">
-<div class="tabbable" style="padding-top: 20px; padding-left:50px"> <!-- Only required for left/right tabs -->
+<ul class="nav navbar-nav navbar-center">
+<div class="tabbable" style="padding-top: 40px"> <!-- Only required for left/right tabs -->
 <ul class="nav nav-tabs">
  <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
  <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
@@ -94,7 +20,32 @@
       </ul>
 </div>
 </ul>
+
 </div>
-    </div>
-    </div>
+<div class="social-icons pull-right" style="padding-top:20px">
+
+                        <ul id="icon" class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+ <div class="col-md-3" style="color: White">
+                    <div class="contact-info bottom">
+                        <h4><b>Contacts</b></h4>
+                       <address>
+                        E-mail: <a href="mailto:vinaykumar.vk2007@gmail.com">email@vulcaninfotech.com</a><br>
+                        Phone: +91 (512)XXXXXXX<br>
+                        Fax: +91 (512)XXXXXXX<br> 
+                        </address>
+</div>
+
+                      </div>
+
+<div class="col-md-3" style="float: right; color: white">
+                        <p><h5>Copyright 2015 all rights are reserved</h5></p>
+                                     </div>
+    
  

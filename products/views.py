@@ -14,6 +14,7 @@ from .models import Product, Variation
 from .models import Slider
 from .models import Product
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import PostForm
@@ -37,7 +38,7 @@ from dashboard.models import Document
 #def home(request):
 	#sliders = Slider.objects.all()
 	#products = Product.objects.a
-	#template = 'home.html'	
+	#template = 'home.html'
 	#context = {
 		#"products": products,
 		#"sliders": sliders,
@@ -46,11 +47,11 @@ from dashboard.models import Document
 ##################################################################################for home page
 
 def home(request):
-    model = Product 
+    model = Product
     post = Product.objects.filter(date_created__lte=timezone.now()).order_by('-docfile')[:8]
     return render(request, 'home.html', {'post': post})
 
-##################################################################################for product list in product list 
+##################################################################################for product list in product list
 class ProductListView(ListView):
     model = Product
     queryset = Product.objects.all()
@@ -66,7 +67,7 @@ class ProductListView(ListView):
 
 #Basic search function
 #using q import from django.db.models import Q
-# 
+#
     def get_queryset(self, *args, **kwargs):
         qs = super(ProductListView, self).get_queryset(*args, **kwargs)
         query = self.request.GET.get("q")
@@ -84,7 +85,7 @@ class ProductListView(ListView):
                 pass
         return qs
 
-################################################################################## 
+##################################################################################
 #Variation List view
 class VariationListView(ListView):
     model = Variation
@@ -110,7 +111,7 @@ class VariationListView(ListView):
         raise Http404
 
 
-################################################################################## for show detail of product mail and dashboard 
+################################################################################## for show detail of product mail and dashboard
 #Product Detail view for showing detail of products............
 class ProductDetailView(DetailView):
     model = Product
@@ -124,14 +125,14 @@ class ProductDetailView(DetailView):
             raise Http404
         template = "products/product_detail.html"
         context = {
-        "object": product_instance 
+        "object": product_instance
         }
         return render(request, template, context)
 
-######################################################################################## for edit your product item fr history edit and product edit 
-
-
+######################################################################################## for edit your product item fr history edit and product edit
+@login_required
 def post_edit(request, pk):
+    document = Document.objects.filter(user_id = request.user.id)[:1]
     post = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
@@ -143,38 +144,37 @@ def post_edit(request, pk):
             return redirect('products.views.post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-        document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/post_edit.html', {'form': form, 'document': document})
 
 
 ########################################################################################## show the list of login user donate items history
+@login_required
 def post_history(request):
     model = Product, User
     posts = Product.objects.filter(user_id = request.user.id)
-    document = Document.objects.filter(user_id = request.user.id)[:1]    
+    document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/post_list.html', {'posts': posts, 'document': document})
 
 
 ################################################################################## detail of perticular donate items have experidate ....
 
-
-def post_detail_history(request, pk): 
+@login_required
+def post_detail_history(request, pk):
     model = Product
-    user_id=request.user.id 
+    user_id=request.user.id
     post = get_object_or_404(Product, user_id=request.user.id, pk=pk)
-    document = Document.objects.filter(user_id = request.user.id)[:1]    
+    document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/product_detail_history.html', {'post': post, 'document': document})
-    
-########################################################################################## show detail of recent donateitem
 
+########################################################################################## show detail of recent donateitem
 def list_detail(request):
-    post = Product.objects.filter(date_created__lte=timezone.now()).order_by('-docfile')  
-    document = Document.objects.filter(user_id = request.user.id)[:1]    
+    post = Product.objects.filter(date_created__lte=timezone.now()).order_by('-docfile')
+    document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, "products/product_list.html", {'post': post, 'document': document})
-    
+
 
 ################################################################################## show donate item form
-
+@login_required
 def list(request):
     document = Document.objects.filter(user_id = request.user.id)[:1]
     if request.method == 'POST':
@@ -187,7 +187,7 @@ def list(request):
         form = DocumentForm() # A empty, unbound form
 
    # Load documents for the list page
-        
+
     return render_to_response(
         'products/list.html',
         {'document': document, 'form': form},
@@ -195,34 +195,35 @@ def list(request):
     )
 
 ##################################################################################
-def post_detail_list(request, pk): 
-    model = Product 
+@login_required
+def post_detail_list(request, pk):
+    model = Product
     user_id=request.user.id
-    #post = Product.objects.filter(user_id = request.user.id, pk=pk)  
+    #post = Product.objects.filter(user_id = request.user.id, pk=pk)
     post = get_object_or_404(Product, user_id=request.user.id, pk=pk)
     document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/product_detail1.html', {'post': post, 'document': document})
-  
+
 
 ################################################################################## edit form for history item
-  
-    
+@login_required
 def post_edit_list(request, pk):
-    post = get_object_or_404(Product, pk=pk)
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    post = get_object_or_404(Product, user_id=request.user.id, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post )      
+        form = PostForm(request.POST, instance=post )
         if form.is_valid():
             post.user = request.user
-            post.save()           
+            post.save()
             return redirect('products.views.post_detail_list', pk=post.pk)
     else:
         form = PostForm(instance=post)
-        document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/post_edit.html', {'form': form, 'document': document})
-    
-    
-    
-    
+
+
+
+
+
 
 
 

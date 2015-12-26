@@ -1,86 +1,49 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-    <style>
-      .container{
-          height:900px;
-          width:1290px;
-               }
-      #myCarousel{
-      height: 500px;
-      width: 1000px;
-      }
-       #myCarousel1{
-      height: 500px;
-      width: 1000px;
-      }
-      div.img {
-    border: 1px solid #8B0000;
-    float: left;
-    text-align: center;
-}
-
-div.img img {
-    display: inline;
-    margin: 8px;
-    border: 1px solid #ffffff;
-    height: 130px;
-    width: 130px;
-}
-
-div.img a:hover img {
-    border: 1px solid #8B0000;
-}
-
-div.desc {
-  text-align: center;
-  font-weight: normal;
-  width: 165px;
-  margin: 15px;
-}
 </style>
 
 
     </head>
 {% block content %}
     <img src='{% static "img/snap/mem4.jpg" %}' class="img-responsive" style="width:100%"/>
-<br>
+
     <body>
-        <div class="main" style="background-color:Lavender; width:100%">
-             <div class="container">
+        <div class="main" style="background-color:Lavender; id="main">
+             <div class="container-fluid">
                  <br>
 		</div>
-<div class="container" style="padding-left:120px">
+<div class="container-fluid" style="padding-left:170px">
                 <div class="row">
-                        <div class="col-md-12"  style="color: Brown">
-          <center><h2>Our Memories</h2></center>
-                              <i style="text-align: center"><h3>" One lives in the hope of becoming a memory "</h3></i>
+                        <div class="col-md-12"  style="color: #2f2a67" id="main1">
+          <h2 style="padding-left:140px">" One lives in the hope of becoming a memory "</h2>
+                             
                         </div>
               </div>
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="color: #2f2a67" id="main1">
                          <p><u><h3>Children / Our Future</h3></u></p>
                 </div>
                 </div>
     <div class="row">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:200px; width:910px; padding-left:10px">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 900px; padding-right:10px">
+    <div class="carousel-inner" id="carousel1" role="listbox">
       <div class="item active">
                  <div class = "row">
 
   <div class = "col-sm-6 col-md-3">
 
-      <div class="img" style="height: 153px; width:153px">
-          <img id="img1" src="{% static 'img/ec2.jpeg' %}"  class="img-responsive">
+      <div class="img">
+          <img id="img1" src="{% static 'img/ec2.jpeg' %}">
       </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img2" src="{% static 'img/happy2.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img2" src="{% static 'img/happy2.jpeg' %}">
 </div>
 
    </div>
@@ -88,13 +51,13 @@ div.desc {
    <div class = "col-sm-6 col-md-3">
 
        <div class="img" style="height: 153px; width:153px">
-     <img id="img3" src="{% static 'img/ec3.jpeg' %}"class="img-responsive">
+     <img id="img3" src="{% static 'img/ec3.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-<div class="img" style="height: 153px; width:153px">
- <img id="img4" src="{% static 'img/ec4.jpeg' %}"class="img-responsive">
+<div class="img">
+ <img id="img4" src="{% static 'img/ec4.jpeg' %}">
 </div>
 
    </div>
@@ -105,27 +68,27 @@ div.desc {
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img5" src="{% static 'img/edu1.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img5" src="{% static 'img/edu1.jpeg' %}">
 </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img6" src="{% static 'img/happy3.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img6" src="{% static 'img/happy3.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-      <div class="img" style="height: 153px; width:153px">
- <img id="img7" src="{% static 'img/happy5.jpeg' %}"class="img-responsive">
+      <div class="img">
+ <img id="img7" src="{% static 'img/happy5.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-    <div class="img" style="height: 153px; width:153px">
- <img id="img8" src="{% static 'img/b32.jpg' %}"class="img-responsive">
+    <div class="img">
+ <img id="img8" src="{% static 'img/b32.jpg' %}">
 </div>
    </div>
    </div>
@@ -134,54 +97,54 @@ div.desc {
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="float:right; padding-right:-60px; width:9px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="left carousel-control" id="cor1" href="#myCarousel" role="button" data-slide="prev" style=" color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="ture"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="float:right; margin-right: -7px; width:2px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="right carousel-control" id="cor2" href="#myCarousel" role="button" data-slide="next" style=" color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
   </div>
      <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="color: #2f2a67"  id="main1">
                          <p><u><h3>Citizens / Our Experience</h3></u></p>
                 </div>
                     </div>
                 <div class="row">
-                                   <div id="myCarousel1" class="carousel slide" data-ride="carousel" style="height:200px; width:910px; padding-left:10px">
+                                   <div id="myCarousel1" class="carousel slide" data-ride="carousel">
    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 900px; padding-right:10px">
+    <div class="carousel-inner" id="carousel1" role="listbox">
       <div class="item active">
                  <div class = "row">
 
   <div class = "col-sm-6 col-md-3">
 
-      <div class="img" style="height: 153px; width:153px">
-          <img id="img1" src="{% static 'img/old1.jpeg' %}" class="img-responsive">
+      <div class="img">
+          <img id="img1" src="{% static 'img/old1.jpeg' %}">
       </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img2" src="{% static 'img/old2.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img2" src="{% static 'img/old2.jpeg' %}">
 </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img3" src="{% static 'img/old3.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img3" src="{% static 'img/old3.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-<div class="img" style="height: 153px; width:153px">
- <img id="img4" src="{% static 'img/old4.jpeg' %}"class="img-responsive">
+<div class="img">
+ <img id="img4" src="{% static 'img/old4.jpeg' %}">
 </div>
 
    </div>
@@ -192,27 +155,27 @@ div.desc {
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img5" src="{% static 'img/old5.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img5" src="{% static 'img/old5.jpeg' %}">
 </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img6" src="{% static 'img/old6.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img6" src="{% static 'img/old6.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-      <div class="img" style="height: 153px; width:153px">
- <img id="img7" src="{% static 'img/old8.jpeg' %}"class="img-responsive">
+      <div class="img">
+ <img id="img7" src="{% static 'img/old8.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-    <div class="img" style="height: 153px; width:153px">
- <img id="img8" src="{% static 'img/old7.jpeg' %}"class="img-responsive">
+    <div class="img">
+ <img id="img8" src="{% static 'img/old7.jpeg' %}">
 </div>
    </div>
    </div>
@@ -221,54 +184,54 @@ div.desc {
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev" style="float:right; padding-right:-60px; width:9px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="left carousel-control" id="cor1" href="#myCarousel1" role="button" data-slide="prev" style=" color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="ture"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel1" role="button" data-slide="next" style="float:right; margin-right: -7px; width:2px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="right carousel-control" id="cor2" href="#myCarousel1" role="button" data-slide="next" style=" color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
  </div>
       <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" style="color: #2f2a67"  id="main1">
             <p><u><h3>Womens / Our Power</h3></u></p>
                             </div>
                             </div>
     <div class="row">
-                              <div id="myCarousel2" class="carousel slide" data-ride="carousel" style="height:200px; width:910px; padding-left:10px">
+                              <div id="myCarousel2" class="carousel slide" data-ride="carousel">
    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 900px; padding-right:10px">
+    <div class="carousel-inner" id="carousel1" role="listbox" style="width: 900px; padding-right:10px">
       <div class="item active">
                  <div class = "row">
 
   <div class = "col-sm-6 col-md-3">
 
-      <div class="img" style="height: 153px; width:153px">
-          <img id="img1" src="{% static 'img/we9.jpeg' %}"class="img-responsive">
+      <div class="img">
+          <img id="img1" src="{% static 'img/we9.jpeg' %}">
       </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img2" src="{% static 'img/we2.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img2" src="{% static 'img/we2.jpeg' %}">
 </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img3" src="{% static 'img/we3.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img3" src="{% static 'img/we3.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-<div class="img" style="height: 153px; width:153px">
- <img id="img4" src="{% static 'img/we4.jpeg' %}"class="img-responsive">
+<div class="img">
+ <img id="img4" src="{% static 'img/we4.jpeg' %}">
 </div>
 
    </div>
@@ -279,27 +242,27 @@ div.desc {
 
    <div class = "col-sm-6 col-md-3">
 
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img5" src="{% static 'img/we5.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img5" src="{% static 'img/we5.jpeg' %}">
 </div>
 
    </div>
 
    <div class = "col-sm-6 col-md-3">
-       <div class="img" style="height: 153px; width:153px">
-     <img id="img6" src="{% static 'img/we6.jpeg' %}"class="img-responsive">
+       <div class="img">
+     <img id="img6" src="{% static 'img/we6.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-      <div class="img" style="height: 153px; width:153px">
- <img id="img7" src="{% static 'img/we7.jpeg' %}"class="img-responsive">
+      <div class="img">
+ <img id="img7" src="{% static 'img/we7.jpeg' %}">
 </div>
    </div>
 
    <div class = "col-sm-6 col-md-3">
-    <div class="img" style="height: 153px; width:153px">
- <img id="img8" src="{% static 'img/we9.jpeg' %}"class="img-responsive">
+    <div class="img">
+ <img id="img8" src="{% static 'img/we9.jpeg' %}">
 </div>
    </div>
    </div>
@@ -308,11 +271,11 @@ div.desc {
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev" style="float:right; padding-right:-70px; width:9px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="left carousel-control" id="cor1" href="#myCarousel2" role="button" data-slide="prev" style="color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="ture"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next" style="float:right; margin-right: -7px; width:2px; height:0px; margin-top:77px; color:MidnightBlue">
+    <a class="right carousel-control" id="cor2" href="#myCarousel2" role="button" data-slide="next" style="color:MidnightBlue">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -320,7 +283,7 @@ div.desc {
     </div>
 
 </div>
-        <div id="footer"></div><br />
+       
         <script src=js/htrftr.js></script>
           <script src="//code.jquery.com/jquery-1.10.2.js"></script>
           </div>

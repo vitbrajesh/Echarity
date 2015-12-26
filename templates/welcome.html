@@ -36,14 +36,8 @@
     <script src="{% static 'assets/js/custom.js' %}"></script>
     <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
 
-<style>
-body {
-    font-family: Oswald Light;
-    background:#00CC99;
-}
-</style>
 </head>
-<body>
+
 
 {% include "products/header.html" %}
 
@@ -52,9 +46,7 @@ body {
             <div class="sidebar-collapse" >
                 <ul class="nav" id="main-menu" >
 				<li class="text-center">
-                  {% load staticfiles %}
- 
-                        
+                         
                         
              {% if document %}
                                 
@@ -96,27 +88,13 @@ body {
         <!-- /. NAV SIDE  -->
                    
                  <!-- /. ROW  -->
-     </div>
-      
-  <!-- end .container_12 -->
-
-</div>     </div>
+     
+  </div>  
 {% block content %}
 {% endblock %}
+    </div>  
+{% include "products/footer.html" %}
 
-
-
-
-              
-                
-                 <!-- /. ROW  -->
-
-              
-{% include "products/footer1.html" %}
-                        
-                <!-- /. ROW 
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
       <!-- BOOTSTRAP SCRIPTS -->
@@ -125,7 +103,6 @@ body {
     <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="{% static 'assets/js/custom.js' %}"></script>
- 
-</body>
+
 </html>
 

@@ -4,9 +4,10 @@
 {% load staticfiles %}
 <link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
 <script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
-      <div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+   <body>
+   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
 <h1 style="color:white"><center><b>"DONATE OR   PUBLISH  YOUR PRODUCT"<b></h1></center><br><br>*For the Previous Product details check-out your History<hr/>
-<div class="container" style="height:180%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
+<div class="container-fluid" style="height:180%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
 
                 <div class="margin" style="margin-left:5%"> 
                     <u><h3 style="color:black; padding-left:10%">Enter the valuable details of your Donating Things</h3></u></div><br>
@@ -23,5 +24,6 @@
                 </form>
                 </div>
 
-
+</div>
+</body>
   {% endblock %}

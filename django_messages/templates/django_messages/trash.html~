@@ -3,9 +3,10 @@
 {% load url from future %}
 
 {% block content %}
-<div class="container" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<body>
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
 <h1 style="color:white"><center><b>{% trans "Deleted Message" %}<b><center></h1><br><br><hr/>
-<div class="container" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
+<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
 
 {% if message_list %} 
 <div class="row">
@@ -37,4 +38,6 @@
 {% endif %}   
 <br />
 <p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p></div>
+</div> 
+</body>
 {% endblock %}
