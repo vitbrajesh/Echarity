@@ -12,12 +12,12 @@ from django.utils import timezone
 #from .forms import VariationInventoryForm
 from .models import Product, Variation
 from .models import Slider
-from .models import Product
+from .models import Product, Service
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
 
-from .forms import PostForm
+from .forms import PostForm, Service1Form
 from .models import Product1
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
@@ -27,7 +27,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .models import Document
-from .forms import DocumentForm
+from .forms import DocumentForm, ServiceForm
 from dashboard.models import Document
 
 
@@ -152,19 +152,31 @@ def post_edit(request, pk):
 def post_history(request):
     model = Product, User
     posts = Product.objects.filter(user_id = request.user.id)
+    post = Service.objects.filter(user_id = request.user.id)
     document = Document.objects.filter(user_id = request.user.id)[:1]
-    return render(request, 'products/post_list.html', {'posts': posts, 'document': document})
+    return render(request, 'products/post_list.html', {'posts': posts, 'post': post, 'document': document})
 
 
 ################################################################################## detail of perticular donate items have experidate ....
 
 @login_required
 def post_detail_history(request, pk):
-    model = Product
+    model = Product, Service
     user_id=request.user.id
     post = get_object_or_404(Product, user_id=request.user.id, pk=pk)
+    #posts = get_object_or_404(Service, user_id=request.user.id, pk=pk)
     document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/product_detail_history.html', {'post': post, 'document': document})
+
+
+@login_required
+def service_detail_history(request, pk):
+    model = Service
+    user_id=request.user.id
+    #post = get_object_or_404(Product, user_id=request.user.id, pk=pk)
+    post = get_object_or_404(Service, user_id=request.user.id, pk=pk)
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    return render(request, 'products/service_detail_history.html', {'post': post, 'document': document})
 
 ########################################################################################## show detail of recent donateitem
 def list_detail(request):
@@ -219,9 +231,53 @@ def post_edit_list(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'products/post_edit.html', {'form': form, 'document': document})
+    
+##################################################################################################
+@login_required
+def post_edit_service(request, pk):
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    post = get_object_or_404(Service, user_id=request.user.id, pk=pk)
+    if request.method == "POST":
+        form = Service1Form(request.POST, instance=post )
+        if form.is_valid():
+            post.user = request.user
+            post.save()
+            return redirect('products.views.post_detail_service', pk=post.pk)
+    else:
+        form = Service1Form(instance=post)
+    return render(request, 'products/post_edit_service.html', {'document': document, 'form': form})
+    
+
+@login_required
+def post_detail_service(request, pk):
+    model = Service
+    user_id=request.user.id
+    #post = Product.objects.filter(user_id = request.user.id, pk=pk)
+    post = get_object_or_404(Service, user_id=request.user.id, pk=pk)
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    return render(request, 'products/service_detail1.html', {'document': document, 'post': post})
 
 
 
+@login_required
+def service(request):
+    document = Document.objects.filter(user_id = request.user.id)[:1]
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES)
+        if form:
+            newdoc = Service(user = request.user, title = request.POST['title'], active = request.POST['active'], description = request.POST['description'], duraction = request.POST['duraction'], zip_Code = request.POST['zip_Code'], address = request.POST['address'], expire_date = request.POST['expire_date'])
+            newdoc.save()
+            return redirect('products.views.post_detail_service', pk=newdoc.pk)
+    else:
+        form = ServiceForm() # A empty, unbound form
+
+   # Load documents for the list page
+
+    return render_to_response(
+        'products/service.html',
+        {'document': document, 'form': form},
+        context_instance=RequestContext(request)
+    )
 
 
 

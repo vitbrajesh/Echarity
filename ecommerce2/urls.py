@@ -24,9 +24,11 @@ urlpatterns = [
     #url(r'^dashboard/', include(router.urls)),
  # Product:
     url(r'^$', 'products.views.home', name='home'),
-    url(r'^products/', include('products.urls')),
+    url(r'^products/', include('products.urls')),   
+    #url(r'^donateservice/$', 'products.views.ServiceListView', name='ServiceListView'),
     url(r'^history/$', 'products.views.post_history', name='post_history'),
     url(r'^history/add/(?P<pk>[0-9]+)/$', 'products.views.post_detail_history', name='post_detail_history'),
+    url(r'^history/service/(?P<pk>[0-9]+)/$', 'products.views.service_detail_history', name='service_detail_history'),
  # Admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),

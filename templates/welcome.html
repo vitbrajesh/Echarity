@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
 	<!-- BOOTSTRAP STYLES-->
+	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
     <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
@@ -67,6 +68,10 @@
                     </li>		
                     <li>
                         <a href="{% url 'list' %}"><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
+                        
+                    </li>
+                    <li>
+                        <a href="/products/service/ "><i class="fa fa-dashboard fa-3x"></i> DONATE SERVICE</a>
                     </li>
                           <li  >
                        <a href="{% url 'post_history' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
@@ -93,7 +98,7 @@
 {% block content %}
 {% endblock %}
     </div>  
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
 
     <!-- JQUERY SCRIPTS -->
     <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>

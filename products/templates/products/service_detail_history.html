@@ -1,0 +1,65 @@
+{% extends "dashboard.html"%}
+
+{% block content %}
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h2 style="color:white"><center><b>YOUR PAST SERVICE DETAIL<b></center></h2><br><br><hr/>
+<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
+    <u><h3 style="color:DarkCyan">Edit Action can perform here.</h3></u><br>
+
+      {% load staticfiles %} 
+    <div class='col-sm-4'>
+
+         
+        <div><br>
+			<h3 style="color:brown;"><lable>Added Service:</lable></h3><br>
+			{% if post %}<br>
+                        <ul>
+                        
+                                
+                                <img src="{% static 'assets/img/charity.jpg' %}" style="width:350px; height:220px; border:1px solid brown; class="img-circle" alt="{{ post.docfile.name }}">
+                                </a></li>
+                        
+                        </ul>
+                {% else %}
+                        <p>No documents.</p>
+                {% endif %}
+			<br>
+             
+        </div> 
+        
+    </div>
+
+    <!-- Product Sidebar --> 
+    <div class='col-sm-6'style="padding-left:200px">
+        
+        {% if object.variation_set.count > 1 %}
+            <select class="form-control">
+                {% for vari_obj in object.variation_set.all %}
+                <option value="{{ vari_obj.id }}"> {{ vari_obj }}</option>  
+                {% endfor %}
+            </select>23
+        {% endif %}
+        
+		 
+       <h3>{{post.title}}<br><br/></h3>
+        <h3 style="color:brown;"><lable>Available From:</lable></h3>
+       {{post.date_Update}}<br>
+        <h3 style="color:brown;"><lable>Available Till:</lable></h3>
+       {{post.expire_date}}<br> 
+        <h3 style="color:brown;"><lable>Location:</lable></h3>
+       {{post.address}}
+<br><br><br>
+ 
+      Edit: <a class="btn btn-default" href="{% url 'post_edit_service' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+    </div>
+	<div class="row">
+	<div class="col-sm-9">
+	<h3 style="color:brown; padding-top:20px"><lable>Description:</lable></h3>     
+          <p><h4>{{ post.description }}</h4></p>
+		</div>
+      </div> 
+    </div>
+ 
+</div>
+</div>
+{% endblock %}

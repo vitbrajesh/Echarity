@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <title>{% block head_title %}Icharity{% endblock %}</title>
 <head>
+<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
 <link href="{% static 'fotter/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'fotter/css/lightbox.css' %}" rel="stylesheet"> 
@@ -34,6 +35,9 @@
 
 
 
+
+
+
    
 <script src="{% static 'js/classie1.js' %}"></script>
 <script src="{% static 'js/classie2.js' %}"></script>
@@ -57,6 +61,7 @@
  
 
 <style>
+
 .navbar-default{
 background:white;
 }
@@ -91,7 +96,7 @@ background:LightSteelBlue;
 {% block content %}
 {% endblock %}
 
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
 </div>
 </body>
 </html>

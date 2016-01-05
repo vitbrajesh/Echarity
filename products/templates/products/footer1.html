@@ -1,10 +1,12 @@
+{% block content %}
 {% load staticfiles %}
+	 
    <link href="{% static 'fotter/css/animate.min.css' %}" rel="stylesheet"> 
 <div class="navbar-default navbar-bottom" role="navigation" style="background-color: #383838">
-<div class="container-fluid" style="height:230px">
+<div class="container-fluid" style="height:155px">
 <div class="navbar-footer">
 <ul class="nav navbar-nav navbar-center">
-<div class="tabbable" style="padding-top: 50px"> <!-- Only required for left/right tabs -->
+<div class="tab lable" style="padding-top: 10px"> <!-- Only required for left/right tabs -->
 <ul class="nav nav-tabs">
  <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
  <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
@@ -19,7 +21,7 @@
 </div>
 <div class="social-icons pull-right" style="padding-top:25px">
 
-                        <ul id="icon" class="nav nav-pills">
+                        <ul class="nav nav-pills">
                             <li><a href=""><i class="fa fa-facebook"></i></a></li>
                             <li><a href=""><i class="fa fa-twitter"></i></a></li>
                             <li><a href=""><i class="fa fa-google-plus"></i></a></li>
@@ -36,11 +38,11 @@
                         Fax: +91 (512)XXXXXXX<br> 
                         </address>
 </div>
+  </div>
 
-                      </div>
-
-<div class="col-md-3" style="padding-top:100px; float: right; color: white">
+<div class="col-md-3" style="float: right; color: white; float: right">
                         <p><h5>Copyright 2015 all rights are reserved</h5></p>
                                      </div>
     </div>
+{% endblock %}
  

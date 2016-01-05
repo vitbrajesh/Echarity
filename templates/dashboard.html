@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
 	<!-- BOOTSTRAP STYLES-->
-
+	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
      <!-- FONTAWESOME STYLES-->
 
         <!-- CUSTOM STYLES-->
@@ -19,14 +19,11 @@
 <link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
 <script src="{% static 'js/classie1.js' %}"></script>
 <script src="{% static 'js/classie2.js' %}"></script>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
 
-<script src="{% static 'js/modernizr.js' %}"></script> 
-<!----------------ONLINE------->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
@@ -69,6 +66,9 @@
                     </li>			
                     <li>
                         <a href="/products/list/ "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
+                    </li>
+                    <li>
+                        <a href="/products/service/ "><i class="fa fa-dashboard fa-3x"></i> DONATE SERVICE</a>
                     </li>
                        <li  >
                        <a href="{% url 'post_history' %} "><i class="fa fa-bar-chart-o fa-3x"></i> HISTORY</a>
@@ -178,7 +178,7 @@
 {% block content %}
 {% endblock %}
        </div>   </div>     </div>     
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
                         
                 <!-- /. ROW 
      <!-- /. WRAPPER  -->
