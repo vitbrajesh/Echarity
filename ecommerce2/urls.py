@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')), 
     url(r'^tour/$', 'ecommerce2.views.tour', name='tour'),
     url(r'^dashboard/', include('dashboard.urls')),
+    url(r'^avatar/', include('avatar.urls')),
    
 ]
 

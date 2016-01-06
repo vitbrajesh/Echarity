@@ -137,7 +137,7 @@ background:LightSteelBlue;
 {% for object in post %}
 		<div class='col-sm-3'>
 			<div class="thumbnail">
-<a href='/products/{{ object.pk }}/'> <h1><u>{{ object.title|upper }}</u></h1></a><br>
+<br>
 	
             {% if object %}
 <ul>
@@ -149,10 +149,13 @@ background:LightSteelBlue;
 
 
 {% endif %}
-<div class="caption">
-<p><u>{{ object.description|truncatechars:20  }}</u></p>
+<a class="text-left" href='/products/{{ object.pk }}/'> <h2><u>{{ object.title|upper }}</u></h2></a>
 
+<p class="text-center"><u>{{ object.description|truncatechars:20  }}</u></p>
+<div class="caption">
+ {% load i18n avatar_tags %}
 <a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <a href="/products/enquiry/" class="btn btn-default" role="button">{{ object.user }}</a></div>
 		   	 </div>
 

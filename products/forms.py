@@ -41,8 +41,9 @@ class DocumentForm(forms.Form):
     address = forms.CharField(
         label='Address',
     )
-    expire_date = forms.DateTimeField(widget=DateTimeWidget(usel10n=True, bootstrap_version=3))
-    
+    expire_date = forms.DateTimeField(
+        label='Expire Date',
+    )
  
 class ServiceForm(forms.Form):
     

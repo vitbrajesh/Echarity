@@ -2,7 +2,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<title>{% block head_title %}Icharity{% endblock %}</title>
+<title>{% block head_title %}Echarity{% endblock %}</title>
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,16 +49,17 @@
 				<li class="text-center">
                          
                         
-             {% if document %}
-                                
- {% for document in document %}
-                                <img src="{{ document.docfile.url }}" class="img-circle"  width="160px" height="150px" alt="{% static 'assets/img/find_user.png' %}"/>
-                      {% endfor %}
-          
-                        {% else %}
-                       <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle"  width="160px" height="150px" alt="your selected item"/>
-								
-                {% endif %}
+          {% load staticfiles %}
+     {% load i18n avatar_tags %}
+    <p></p>
+   {% avatar user %}
+    {% if not avatars %}
+        
+    {% endif %}
+    <form enctype="multipart/form-data" method="POST" action="{% url 'avatar_add' %}">
+        {{ upload_avatar_form.as_p }}
+        <p>{% csrf_token %}<input type="submit" value="{% trans "ChangeImage" %}" /></p>
+    </form>       
                                            
 	</li>	{% for document in document %}
  <li><b><center> {{document.firstname}}&nbsp;{{ document.lastname}}</center></b>

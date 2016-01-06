@@ -65,6 +65,7 @@ INSTALLED_APPS = (
     'filer',
     'dashing',
     'dashboard',
+    'avatar',
   
 )
 
